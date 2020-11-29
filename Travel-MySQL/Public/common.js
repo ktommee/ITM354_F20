@@ -10,16 +10,34 @@ header.innerHTML = (`
                 </div>
    </div>
    <div align="right">
-   Teachers and Administrators:
-  <a href="/login.html" class="button2">Login</a>
-  <a href="/register.html" class="button2">Register</a>
+  <a href="/login.html" class="button2">Teacher Login</a>
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
        <a href="/index.html" class="button1">Home</a>
-       <a href="/aboutus.html" class="button1">About Us</a>
-       <a href="/schedule.html" class="button1">Student Information</a>
-       <a href="/blog.html" class="button1">Teacher Information</a>
+       <div class="dropdown">
+       <button class="dropbtn">About Us</button>
+       <div align = "left" class="dropdown-content">
+         <a href="/services.html">Services</a>
+         <a href="/philosophy.html">Learning Philosophy</a>
+         <a href="/testimonies.html">Student Testimonies</a>
+       </div>
+     </div>
+     
+     <div class="dropdown">
+     <button class="dropbtn">Student Information</button>
+     <div class="dropdown-content">
+       <a href="#">Link 1</a>
+       <a href="#">Link 2</a>
+       <a href="#">Link 3</a>
+     </div>
+   </div>
+   <div class="dropdown">
+   <button class="dropbtn">Teacher Information</button>
+   <div class="dropdown-content">
+     <a href="#">Link 1</a>
+     <a href="#">Link 2</a>
+     <a href="#">Link 3</a>
    </div>
 
    `);
