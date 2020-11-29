@@ -10,34 +10,22 @@ header.innerHTML = (`
                 </div>
    </div>
    <div align="right">
-  <a href="/login.html" class="button2">Teacher/Admin Login</a>
+  <a href="/index.html" class="button2">Student View</a>
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="/index.html" class="button1">Home</a>
-       <div class="dropdown">
-       <button class="dropbtn">About Us</button>
-       <div align = "left" class="dropdown-content">
-       <a href="/philosophy.html">Learning Philosophy</a> 
-        <a href="/services.html">Services</a>
-        <a href="/testimonies.html">Student Testimonials</a>
-       </div>
-     </div>
+       <a href="/index.html" class="button1">Class Schedule</a>
+       <a href="/index.html" class="button1">Available Classrooms</a>
+       <a href="/index.html" class="button1">Student Information</a>
+       <a href="/index.html" class="button1">Recital Registration </a>
      
      <div class="dropdown">
-     <button class="dropbtn">Student Information</button>
+     <button class="dropbtn">Dropdown</button>
      <div align = "left" class="dropdown-content">
-       <a href="#">Class Availability</a>
-       <a href="#">Student Registration</a>
-       <a href="#">Submit Feedback</a>
+       <a href="#">Link 1</a>
+       <a href="#">Link 2</a>
+       <a href="#">Link 3</a>
      </div>
-   </div>
-   <div class="dropdown">
-   <button class="dropbtn">Teacher Information</button>
-   <div align = "left" class="dropdown-content">
-     <a href="#">Teacher Lookup</a>
-     <a href="#">Link 2</a>
-     <a href="#">Link 3</a>
    </div>
 
    `);
