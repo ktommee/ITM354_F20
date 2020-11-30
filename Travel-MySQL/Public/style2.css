@@ -374,9 +374,13 @@ th {
   }
   
   tr  {
-    background-color:rgb(255, 208, 255);
     font-size: 20px;
-    color: brown;
+    color: rgb(0, 0, 0);
+  }
+
+  tr.title  {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
   }
 
 .index-header {
@@ -384,6 +388,7 @@ th {
     background-color: lightblue;
     text-align: center;
 }
+
 
 .title {
     font-style: italic; 
@@ -397,7 +402,7 @@ th {
 .aboutus {
     background-color:#90dfff;
     text-align: left;
-    padding: 3px 3px 3px 3px;
+ 
 }
 
 /* Dropdown Button */
