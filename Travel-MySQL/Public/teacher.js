@@ -28,6 +28,19 @@ header.innerHTML = (`
      </div>
    </div>
 
+  
+   <div align="center" style="background-color:paleturquoise">
+   <a href="/index.html" class="button1">New Student Registration</a>
+ 
+ <div class="dropdown">
+ <button class="dropbtn">Finances</button>
+ <div align = "left" class="dropdown-content">
+   <a href="#">Outstanding Payments</a>
+   <a href="#">Overview</a>
+   <a href="#">Payment Schedule by Trimester</a>
+ </div>
+</div>
+
    `);
 
 // Common footer used on all pages
