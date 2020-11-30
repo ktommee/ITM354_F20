@@ -19,7 +19,7 @@ header.innerHTML = (`
        <button class="dropbtn">About Us</button>
        <div align = "left" class="dropdown-content">
        <a href="/philosophy.html">Learning Philosophy</a> 
-        <a href="/services.html">Services</a>
+        <a href="/services3.html">Services</a>
         <a href="/testimonies.html">Student Testimonials</a>
        </div>
      </div>
