@@ -13,7 +13,7 @@ header.innerHTML = (`
   <a href="/login.html" class="button2">Teacher/Admin Login</a>
 </div>
 <br>
-   <div align="center" style="background-color:paleturquoise">
+   <div align="center" style="background-color:white">
        <a href="/index.html" class="button1">Home</a>
        <div class="dropdown">
        <button class="dropbtn">About Us</button>
