@@ -29,13 +29,13 @@ header.innerHTML = (`
      <div align = "left" class="dropdown-content">
        <a href="#">Class Availability</a>
        <a href="#">Student Registration</a>
-       <a href="#">Submit Feedback</a>
+       <a href="feedback.html">Submit Feedback</a>
      </div>
    </div>
    <div class="dropdown">
    <button class="dropbtn">Teacher Information</button>
    <div align = "left" class="dropdown-content">
-     <a href="#">Teacher Lookup</a>
+   <a href="/teacher_lookup.html">Teacher Lookup</a>
      <a href="#">Link 2</a>
      <a href="#">Link 3</a>
    </div>
