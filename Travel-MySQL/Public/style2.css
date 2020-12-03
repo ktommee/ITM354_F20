@@ -2,8 +2,7 @@ body {
     width: 800px;
     margin: auto;
     text-align: center;
-    background-image: url("/images/background2.jpg");
-    background-color: lightskyblue;
+    background-color: rgb(133, 191, 201);
     background-size: 100%;
 }
 
@@ -15,17 +14,6 @@ p.header {
     background-color: #3fb6d1;
 }
 
-p.caption {
-    text-align: center;   
-    Font: "Times";
-    font-size: 18px;
-    font-style: normal;
-    background-color: white;
-    width: 350px;
-    height: 20px; 
-    border-radius: 5px 20px 5px;
-    
-}
 
 p.body {
     text-align: center;
@@ -142,10 +130,11 @@ img{
 
 .header {
 	margin-left: "5px";
-	background-color: rgb(255, 255, 255);
+	background-color: rgba(199, 229, 241, 0.938);
 	text-indent: "50px";
 	text-align: center;
 }
+
 
 .break {
     margin-top: 400px;
@@ -187,6 +176,8 @@ img{
     margin-bottom: 20px;
    background-color: lightskyblue;
 }
+
+
 
 .schedule {
     border-radius: 50px;
