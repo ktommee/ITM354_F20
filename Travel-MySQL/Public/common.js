@@ -3,7 +3,7 @@ var header = document.getElementById('main-header');
 console.log(header);
 header.innerHTML = (`
 <div class="header">
-               <div class="main-wrapper">
+            <div class="main-wrapper">
             <div class="header-top">
                 <div class="logo">
                     <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" alt="Nobu Sakurai Piano Studios Logo" /></a>
@@ -13,7 +13,7 @@ header.innerHTML = (`
   <a href="/login.html" class="button2">Teacher/Admin Login</a>
 </div>
 <br>
-   <div align="center" style="background-color:white">
+   <div align="center">
        <a href="/index.html" class="button1">Home</a>
        <div class="dropdown">
        <button class="dropbtn">About Us</button>
@@ -47,8 +47,6 @@ var footer = document.getElementById('main-footer');
 console.log(footer);
 footer.innerHTML = (`
 <div class="mainfooter" style="background-color: lightgray";>
-  <div class="vc_span9">
     <p>NOBU SAKURAI PIANO STUDIOS Copyright 2013. All Rights Reserved.</p>	
-</div>
        `);
    
