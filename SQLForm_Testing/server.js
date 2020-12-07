@@ -43,7 +43,7 @@ con.connect(function (err) {
   });
 */
 
-//Code tutorial: https://www.youtube.com/watch?v=f5kye3ESXE8
+//Code tutorial: https://www.youtube.com/watch?v=f5kye3ESXE8 
 
 //Get information from database.
 app.get('/test', (request, response) => { //type localhost:8080/test to get student data. Good way to check if its been updated.
@@ -73,13 +73,35 @@ app.post('/addStudent', (request, response) => {
 
     //create variable sql creating mysql query
     var forminfo = request.body;
-    var sql = "INSERT INTO student (stu_id, fname, lname, age) VALUES (null, '" + request.body.first_name + "', '" + request.body.last_name + "',  '" + request.body.age + "')";
+    var sql = "INSERT INTO student (stu_id, fname, lname, age) VALUES (null, '" + request.body.first_name + "', '" + request.body.last_name + "',  '" + request.body.s_age + "')";
     
     connection.query(sql, function(err, result)  {
       connection.release() //return the connection to the pool
 
       if(!err) {
         response.send(`Student with Name: ${forminfo.first_name} has been added`) //Doesn't quite work
+      } else {
+        console.log(err)
+      }
+    })
+    console.log(request.body)
+  })
+})
+
+//Update Student
+app.post('/updateStudent', (request, response) => {
+
+  pool.getConnection((err, connection) => {
+    if(err) throw err
+    console.log(`Connected as id ${connection.threadId}`) //??
+    
+    var update_sql = "UPDATE student SET fname = ? WHERE stu_id = ?";
+    
+    connection.query(update_sql, [request.body.first_name, request.body.stu_id], function(err, result)  { //Weird errors with the request.body stuff but it does update!
+      connection.release() //return the connection to the pool
+
+      if(!err) {
+        response.send(`Student with Name: ${forminfo.first_name} has been updated`) //Doesn't quite work
       } else {
         console.log(err)
       }
