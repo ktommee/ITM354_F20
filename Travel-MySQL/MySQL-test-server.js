@@ -263,4 +263,42 @@ app.post("/process_query", function (request, response) {
   query_DB(POST, response);
 });
 
+//CLEMENT'S CODE FOR TEACHER'S SCHEDULE OUTPUT
+//THIS IS BASED OFF THE SAMPLE DATABASE
+function Teachquery_DB(POST, response) {
+  teachfname = POST['teach-fname'];      // Grab the parameters from the submitted form
+  teachlname = POST['teach-lname'];
+  
+  query = "SELECT Lesson_day, Lesson_time, Student_fname, Student_lname, Student_gender, Student_pnum, Student_email FROM Lesson_Slot,Student  WHERE Lesson_id = Student_lesson_id AND Lesson_teacher_id IN(SELECT Teacher_id FROM Teacher WHERE Teacher_fname = '" + teachfname + "' AND Teacher_lname = '" + teachlname + "')";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="teacher_schedule.html" method="GET">`;
+    response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+    response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Student Gender</td><td><B>Student Phone Number</td><td><B>Student Email</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Lesson_day}</td>`;
+      response_form += `<td> ${result[i].Lesson_time}</td>`;
+      response_form += `<td> ${result[i].Student_fname}</td>`;
+      response_form += `<td> ${result[i].Student_lname}</td>`;
+      response_form += `<td> ${result[i].Student_gender}</td>`;
+      response_form += `<td> ${result[i].Student_pnum}</td>`;
+      response_form += `<td> ${result[i].Student_email}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Another Query?"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/teacher_query", function (request, response) {
+let POST = request.body;
+Teachquery_DB(POST, response);
+});
+//END OF CLEMENT'S CODE
+
 app.listen(8080, () => console.log(`listening on port 8080`));
