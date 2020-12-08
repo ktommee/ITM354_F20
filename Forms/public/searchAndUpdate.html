@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="updateCSS.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        //<!--
+            function toggle_visibility(id) {
+               var e = document.getElementById(id);
+               if(e.style.display == 'block')
+                  e.style.display = 'none';
+               else
+                  e.style.display = 'block';
+            }
+        //-->
+    </script>
+
+</head>
+<body>
+    <!--Popup Boxes-->
+    <!--Popup Help From: https://www.youtube.com/watch?v=VnHvVz_bFKo-->
+    
+    <!--Example
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 1 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    -->
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Full Student Record</h3>
+                <form action="/updateX" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="first_name"><b>First Name</b></label>
+                        <input type='text' name='first_name' placeholder="First Name" required><BR>
+                    <input type="submit" value="Submit">
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="popup-box2" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Student First Name</h3>
+                <form action="/updateStudentFname" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="first_name"><b>First Name</b></label>
+                        <input type='text' name='first_name' placeholder="First Name" required><BR>
+                    <input type="submit" value="Submit">
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="popup-box3" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 3 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!--Sidebar Insertion-->
+    <div class="sidenav">
+            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Update Full Student</a>
+            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Update First Name</a>
+            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Update Last Name</a>
+        <!--
+        <div class="form-popup" id="myForm">
+            <form action="/updateStudentFname" method="POST">
+                <label for="stu_id"><b>Student ID</b></label>
+                    <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                <label for="first_name"><b>First Name</b></label>
+                    <input type='text' name='first_name' placeholder="First Name" required><BR>
+                <input type="submit" value="Submit">
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        -->
+
+    </div>
+      
+      <!-- Page content -->
+    <div class="main">
+        <form action="/student_query" method="POST">
+            <H1>Student Search</H1>
+            Enter First Name <input type='text' name='stu-fname'><BR>
+            Enter Last Name <input type='text' name='stu-lname'><BR>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
