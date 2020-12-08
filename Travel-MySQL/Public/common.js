@@ -48,5 +48,19 @@ console.log(footer);
 footer.innerHTML = (`
 <div class="mainfooter" style="background-color: lightgray";>
     <p>NOBU SAKURAI PIANO STUDIOS | Copyright 2013 © | All Rights Reserved </p>	
+    <table>
+    <tbody>
+    <tr>
+        <td><img src="https://image.flaticon.com/icons/png/512/2874/2874771.png"width="75"> nobu@nobusakurai.com</td>
+        
+    </tr>
+    <tr>
+    <td><img src="https://image.flaticon.com/icons/png/512/2939/2939444.png"width="75"> (808)636-0143</td>
+  </tr>
+  <tr>
+  <td><img src="https://image.flaticon.com/icons/png/512/2143/2143101.png"width="85">98-1238 Kaahumanu Ave., Ste. 201 Pearl City, HI</td>
+    </tr>
+    </tbody>
+</table>
        `);
    
