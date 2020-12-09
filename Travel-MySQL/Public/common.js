@@ -48,16 +48,15 @@ footer.innerHTML = (`
     <p>NOBU SAKURAI PIANO STUDIOS | Copyright 2013 © | All Rights Reserved </p>	
     
     <div class="row">
-    <div class="column">
+    <div class="column2">
       <td><img src="https://image.flaticon.com/icons/png/512/2874/2874771.png"width="30"> nobu@nobusakurai.com</td>
     </div>
-    <div class="column">
+    <div class="column2">
       <td><img src="https://image.flaticon.com/icons/png/512/2939/2939444.png"width="30"> (808)636-0143</td>
     </div>
-    <div class="column">
+    <div class="column2">
       <td><img src="https://image.flaticon.com/icons/png/512/2143/2143101.png"width="30">98-1238 Kaahumanu Ave., Pearl City, HI</td>
     </div>
   </div>
-</table>
        `);
    
