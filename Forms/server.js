@@ -97,7 +97,7 @@ app.post('/updateStudentFname', (request, response) => {
   })
 })
 
-//Query Table Creation
+//Query Table Creation for STUDENT NAMES
 //-----------------------------------------------------------------------
 //Potential Code help: https://coursesweb.net/nodejs/select-mysql-output-html-table
 //CLEMENT'S CODE FOR TEACHER'S SCHEDULE OUTPUT

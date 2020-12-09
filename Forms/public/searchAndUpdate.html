@@ -16,6 +16,31 @@
                   e.style.display = 'block';
             }
         //-->
+        //Script for 'Showing element on button press'
+            function myFunction() {
+                var x = document.getElementById("queryDIV1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction2() {
+                var x = document.getElementById("queryDIV2");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction3() {
+                var x = document.getElementById("queryDIV3");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
     </script>
 
 </head>
@@ -76,9 +101,79 @@
 
     <!--Sidebar Insertion-->
     <div class="sidenav">
-            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Update Full Student</a>
-            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Update First Name</a>
-            <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Update Last Name</a>
+            <h2>Parameter Queries</h2>
+            <!--Query by Student Name-->
+            <button onclick="myFunction()">By Name</button>
+
+            <div id="queryDIV1">
+                <form action="/student_query" method="POST">
+                    <H1>Student Search by Name</H1>
+                    Enter First Name <input type='text' name='stu-fname'><BR>
+                    Enter Last Name <input type='text' name='stu-lname'><BR>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <br>
+
+            <button onclick="myFunction2()">By Active Status</button>
+            <!--Query by Active Status-->
+            <div id="queryDIV2">
+                <form action="/student_query" method="POST">
+                    <H1>Active Status Search</H1>
+                    Enter Active or Inactive<input type='text' name='stu-fname'><BR>
+                    <input type="submit" value="Submit">
+                </form>
+            </div> 
+
+            <br>
+
+            <button onclick="myFunction3()">By X</button>
+            <!--Query by X-->
+            <div id="queryDIV3">
+                <form action="/student_query" method="POST">
+                    <H1>Search X</H1>
+                    Enter First Name <input type='text' name='stu-fname'><BR>
+                    Enter Last Name <input type='text' name='stu-lname'><BR>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>  
+            
+           
+            
+        
+
+    </div>
+
+    <!--Topbar Navigation-->
+    <div class="topnav">
+        <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" />
+        
+        <a href="#news">Home</a>
+
+        <div class="dropdown">
+            <span>General Updates</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">First Name</a>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Last Name</a>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Attribute X</a>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Attribute X</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>____ Characteristics</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box4');">Attribute X</a>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box5');">Attribute X</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>___ Info</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box6');">Attribute X</a>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box7');">Attribute X</a>
+            </div>
+        </div>
         <!--
         <div class="form-popup" id="myForm">
             <form action="/updateStudentFname" method="POST">
@@ -91,17 +186,20 @@
             </form>
         </div>
         -->
-
-    </div>
+        
+        <!--
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        -->
+      </div> 
       
       <!-- Page content -->
     <div class="main">
-        <form action="/student_query" method="POST">
-            <H1>Student Search</H1>
-            Enter First Name <input type='text' name='stu-fname'><BR>
-            Enter Last Name <input type='text' name='stu-lname'><BR>
-            <input type="submit" value="Submit">
-        </form>
+        <br>
+        <br>
+        <p>Select a query to begin</p>
     </div>
 
 </body>
