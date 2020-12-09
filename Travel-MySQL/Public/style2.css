@@ -5,7 +5,9 @@ body {
     background-color: rgb(133, 191, 201);
     background-size: 100%;
     font-family: 'PT Sans Narrow',sans-serif;   
-    padding-top: 130px; 
+    padding-top: 150px; 
+    position: sticky;
+    z-index:3;
 }
 
 p.header {
@@ -174,13 +176,14 @@ img{
 	text-indent: "50px";
   text-align: center;
   background-color: white;
-    overflow: hidden;
+    overflow: fixed;
     width: 100%;
     height:auto;
     top: 0; /* Stay at the top */
     left: 0;
     margin-left:0;
     position: fixed;
+    z-index:1;
 }
 
 
