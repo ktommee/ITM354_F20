@@ -159,6 +159,9 @@ img{
 	background: linear-gradient(to bottom, lightblue 5%, #39b4ed 100%);
 	background-color: #2a9ed4;
 }
+
+
+
 .button:active {
 	position: relative;
     top: 1px;
@@ -420,7 +423,7 @@ th {
   
   .column2 {
     float: left;
-    width: 25%;
+    width: 33.33%;
   }
 
   /* Clear floats after the columns */
