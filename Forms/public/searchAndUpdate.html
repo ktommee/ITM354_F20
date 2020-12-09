@@ -17,6 +17,7 @@
             }
         //-->
         //Script for 'Showing element on button press'
+        //Help: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
             function myFunction() {
                 var x = document.getElementById("queryDIV1");
                 if (x.style.display === "none") {
@@ -119,27 +120,30 @@
             <button onclick="myFunction2()">By Active Status</button>
             <!--Query by Active Status-->
             <div id="queryDIV2">
-                <form action="/student_query" method="POST">
-                    <H1>Active Status Search</H1>
-                    Enter Active or Inactive<input type='text' name='stu-fname'><BR>
+                <form action="/active_status" method="POST">
+                    <H1>Find out the students' status</H1>
+                    <select name="student_activity">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
                     <input type="submit" value="Submit">
                 </form>
             </div> 
 
             <br>
 
-            <button onclick="myFunction3()">By X</button>
+            <button onclick="myFunction3()">By Tuition Payment</button>
             <!--Query by X-->
             <div id="queryDIV3">
-                <form action="/student_query" method="POST">
-                    <H1>Search X</H1>
-                    Enter First Name <input type='text' name='stu-fname'><BR>
-                    Enter Last Name <input type='text' name='stu-lname'><BR>
-                    <input type="submit" value="Submit">
+                <form action="/tuition_payment" method="POST">
+                    <H1>Tuition Payment Info</H1>
+                    <input type="submit" value="Find Tuition">
                 </form>
             </div>  
             
-           
+            
+        
+            
             
         
 
