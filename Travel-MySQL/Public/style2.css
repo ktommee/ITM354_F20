@@ -4,7 +4,10 @@ body {
     text-align: center;
     background-color: rgb(133, 191, 201);
     background-size: 100%;
-    font-family: 'PT Sans Narrow',sans-serif;    
+    font-family: 'PT Sans Narrow',sans-serif;   
+    padding-top: 150px; 
+    position: sticky;
+    z-index:3;
 }
 
 p.header {
@@ -156,10 +159,42 @@ img{
 	background: linear-gradient(to bottom, lightblue 5%, #39b4ed 100%);
 	background-color: #2a9ed4;
 }
-.button:active {
+
+
+
+.button3:active {
 	position: relative;
     top: 1px;
     background-color: blue;
+}
+
+.button4 {
+	box-shadow:inset 0px -3px 7px 0px #f29ff2;
+	background:linear-gradient(to bottom, #f3bdfa 5%, #ea80e5 100%);
+	background-color:#cc52cc;
+	border-radius:4px;
+	border:1px solid #000405;
+	display:inline-block;
+	cursor:pointer;
+	color:#f0f0f0;
+	font-family: 'PT Sans Narrow',sans-serif;    
+	font-size:20px;
+	font-weight:bold;
+	padding:7px 11px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc52cc;
+}
+.button4:hover {
+	background: linear-gradient(to bottom, rgb(230, 173, 227) 5%, #e739ed 100%);
+	background-color: #d42acb;
+}
+
+
+
+.button4:active {
+	position: relative;
+    top: 1px;
+    background-color: rgb(255, 0, 255);
 }
 
 .column {
@@ -171,7 +206,16 @@ img{
 	margin-left: "5px";
 	background-color: rgba(199, 229, 241, 0.938);
 	text-indent: "50px";
-	text-align: center;
+  text-align: center;
+  background-color: white;
+    overflow: fixed;
+    width: 100%;
+    height:auto;
+    top: 0; /* Stay at the top */
+    left: 0;
+    margin-left:0;
+    position: fixed;
+    z-index:1;
 }
 
 
@@ -208,11 +252,11 @@ img{
 
 .mainfooter {
     text-align: left; 
-    padding-top: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
    background-color: lightskyblue;
 }
 
@@ -395,17 +439,22 @@ th {
   /* Bottom right text */
   .text-block {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 20%;
+    left: 60%;
     background-color: rgba(167, 197, 197, 0.637);
     color: white;
   }
 
   .column {
     float: left;
-    width: 50%;
+    width: 33.33%;
   }
   
+  .column2 {
+    float: left;
+    width: 33.33%;
+  }
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
