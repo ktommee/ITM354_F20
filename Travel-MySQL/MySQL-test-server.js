@@ -334,6 +334,70 @@ app.post("/process_time", function (request, response) {
 let POST = request.body;
 StudentRegInfo_DB(POST, response);
 });
+
+//Active Status Report
+//
+//
+function ActiveStatus_DB(POST, response) {
+status = POST['student_activity'];      // Grab the parameters from the submitted form
+  
+  query = "SELECT Student_fname, Student_lname FROM Student WHERE Active = '" + status + "'";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="queries.html" method="GET">`;
+    response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+    response_form += `<td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Student_fname}</td>`;
+      response_form += `<td> ${result[i].Student_lname}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Another Query?"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/active_status", function (request, response) {
+let POST = request.body;
+console.log(request.body)
+ActiveStatus_DB(POST, response);
+});
+
+//Tuition Payment Report
+//
+//
+function Tuition_DB(POST, response) {
+       // Grab the parameters from the submitted form
+  
+  query = "SELECT SUM(Tuition) AS Total_Revenue FROM Student";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="queries.html" method="GET">`;
+    response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+    response_form += `<td><B>Total Revenue</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Total_Revenue}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Another Query?"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/tuition_payment", function (request, response) {
+let POST = request.body;
+Tuition_DB(POST, response);
+});
 //END OF CLEMENT'S CODE
 
 app.listen(8080, () => console.log(`listening on port 8080`));
