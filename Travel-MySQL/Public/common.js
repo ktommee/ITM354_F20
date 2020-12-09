@@ -21,6 +21,7 @@ header.innerHTML = (`
        </div>
      </div>
      <a href="/services3.html" class="button1">Services</a>
+     <a href="/lessons.html" class="button1">Lesson and Tuition</a>
      <div class="dropdown">
      <button class="dropbtn">Student Information</button>
      <div align = "left" class="dropdown-content">
