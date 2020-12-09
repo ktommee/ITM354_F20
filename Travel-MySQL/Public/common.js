@@ -17,7 +17,6 @@ header.innerHTML = (`
        <div align = "left" class="dropdown-content">
        <a href="/philosophy.html">Learning Philosophy</a> 
        <a href="/owner.html">Meet Nobu</a> 
-        <a href="/testimonies.html">Student Testimonials</a>
        </div>
      </div>
      <a href="/services3.html" class="button1">Services</a>
