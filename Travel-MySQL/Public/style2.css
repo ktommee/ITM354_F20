@@ -4,7 +4,8 @@ body {
     text-align: center;
     background-color: rgb(133, 191, 201);
     background-size: 100%;
-    font-family: 'PT Sans Narrow',sans-serif;    
+    font-family: 'PT Sans Narrow',sans-serif;   
+    padding-top: 130px; 
 }
 
 p.header {
@@ -171,7 +172,15 @@ img{
 	margin-left: "5px";
 	background-color: rgba(199, 229, 241, 0.938);
 	text-indent: "50px";
-	text-align: center;
+  text-align: center;
+  background-color: white;
+    overflow: hidden;
+    width: 100%;
+    height:auto;
+    top: 0; /* Stay at the top */
+    left: 0;
+    margin-left:0;
+    position: fixed;
 }
 
 
@@ -208,11 +217,11 @@ img{
 
 .mainfooter {
     text-align: left; 
-    padding-top: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
    background-color: lightskyblue;
 }
 
@@ -395,17 +404,22 @@ th {
   /* Bottom right text */
   .text-block {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 20%;
+    left: 60%;
     background-color: rgba(167, 197, 197, 0.637);
     color: white;
   }
 
   .column {
     float: left;
-    width: 50%;
+    width: 33.33%;
   }
   
+  .column2 {
+    float: left;
+    width: 25%;
+  }
+
   /* Clear floats after the columns */
   .row:after {
     content: "";

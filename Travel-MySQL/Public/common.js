@@ -16,11 +16,11 @@ header.innerHTML = (`
        <button class="dropbtn">About Us</button>
        <div align = "left" class="dropdown-content">
        <a href="/philosophy.html">Learning Philosophy</a> 
-        <a href="/services3.html">Services</a>
+       <a href="/owner.html">Meet Nobu</a> 
         <a href="/testimonies.html">Student Testimonials</a>
        </div>
      </div>
-     
+     <a href="/services3.html" class="button1">Services</a>
      <div class="dropdown">
      <button class="dropbtn">Student Information</button>
      <div align = "left" class="dropdown-content">
@@ -33,8 +33,6 @@ header.innerHTML = (`
    <button class="dropbtn">Teacher Information</button>
    <div align = "left" class="dropdown-content">
    <a href="/teacher_lookup.html">Teacher Lookup</a>
-     <a href="#">Link 2</a>
-     <a href="#">Link 3</a>
    </div>
    </div>
    <a href="/login.html" class="button3">Teacher/Admin Login</a>
@@ -48,19 +46,18 @@ console.log(footer);
 footer.innerHTML = (`
 <div class="mainfooter" style="background-color: lightgray";>
     <p>NOBU SAKURAI PIANO STUDIOS | Copyright 2013 © | All Rights Reserved </p>	
-    <table>
-    <tbody>
-    <tr>
-        <td><img src="https://image.flaticon.com/icons/png/512/2874/2874771.png"width="30"> nobu@nobusakurai.com</td>
-        
-    </tr>
-    <tr>
-    <td><img src="https://image.flaticon.com/icons/png/512/2939/2939444.png"width="30"> (808)636-0143</td>
-  </tr>
-  <tr>
-  <td><img src="https://image.flaticon.com/icons/png/512/2143/2143101.png"width="30">98-1238 Kaahumanu Ave., Ste. 201 Pearl City, HI</td>
-    </tr>
-    </tbody>
+    
+    <div class="row">
+    <div class="column">
+      <td><img src="https://image.flaticon.com/icons/png/512/2874/2874771.png"width="30"> nobu@nobusakurai.com</td>
+    </div>
+    <div class="column">
+      <td><img src="https://image.flaticon.com/icons/png/512/2939/2939444.png"width="30"> (808)636-0143</td>
+    </div>
+    <div class="column">
+      <td><img src="https://image.flaticon.com/icons/png/512/2143/2143101.png"width="30">98-1238 Kaahumanu Ave., Pearl City, HI</td>
+    </div>
+  </div>
 </table>
        `);
    
