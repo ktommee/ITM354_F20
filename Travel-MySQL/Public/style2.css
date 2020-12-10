@@ -337,9 +337,6 @@ input[type=text], select, textarea {
     padding-top: 20px;
   }
 
-  .picture {
-    margin-left:0px;
-  }
 
 /* table formatting styling */
 th {
