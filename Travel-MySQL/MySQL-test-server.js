@@ -302,6 +302,7 @@ function Teachquery_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Student Gender</td><td><B>Student Phone Number</td><td><B>Student Email</td></b>`;
     for (i in result) {
@@ -340,6 +341,7 @@ function StudentRegInfo_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="student_reg_info.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Registration Date</td></b>`;
     for (i in result) {
@@ -373,6 +375,7 @@ status = POST['student_activity'];      // Grab the parameters from the submitte
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
     for (i in result) {
@@ -405,7 +408,8 @@ function Tuition_DB(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="analysis.html" method="GET">`;
+    response_form = `<form action="queries.html" method="GET" >`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Total Revenue</td></b>`;
     for (i in result) {
@@ -443,10 +447,11 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-response_form = `<form action="analysis.html" method="GET">`;
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -497,10 +502,11 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-response_form = `<form action="analysis.html" method="GET">`;
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -552,9 +558,10 @@ for(let i = 0; i < result.length; i++) {
 }
 
 response_form = `<form action="queries.html" method="GET">`;
+response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -572,7 +579,7 @@ var barChart = new Chart(popCanvas, {
 </body>`;
 
 
-response_form += `<input type="submit" value="Another Query?"> </form>`;
+response_form += `<br><input type="submit" value="Another Query?"> </form>`;
 response.send(response_form);
 
 });
@@ -605,9 +612,10 @@ for(let i = 0; i < result.length; i++) {
 }
 
 response_form = `<form action="queries.html" method="GET">`;
+response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -625,7 +633,7 @@ var barChart = new Chart(popCanvas, {
 </body>`;
 
 
-response_form += `<input type="submit" value="Another Query?"> </form>`;
+response_form += `<br><input type="submit" value="Another Query?"> </form>`;
 response.send(response_form);
 
 });
@@ -635,6 +643,42 @@ app.post("/teacher_workload_analysis", function (request, response) {
 let POST = request.body;
 Graph_DB(POST, response);
 });
+
+//Timeslot_Availability_Day
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Timeslot_Day_DB(POST, response) {
+  lesson_day = POST['lesson_day'];      // Grab the parameters from the submitted form
+    
+    query = "SELECT L_day, L_time, CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Teacher_email FROM Lesson_slot, Teachers WHERE Lesson_teacher_id = Teacher_id AND Student_Capacity < 4 AND L_day = '" + lesson_day + "'";
+    con.query(query, function (err, result, fields) {   // Run the query
+      if (err) throw err;
+      console.log(result);
+      //var res_string = JSON.stringify(result);
+      //var res_json = JSON.parse(res_string);
+  
+      // Now build the response: table of results and form to do another query
+      response_form = `<form action="availability.html" method="GET">`;
+      response_form += `<link rel="stylesheet" href="style2.css">`
+      response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+      response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
+      for (i in result) {
+        response_form += `<tr><td> ${result[i].L_day}</td>`;
+        response_form += `<td> ${result[i].L_time}</td>`;
+        response_form += `<td> ${result[i].Teacher_name}</td>`;
+        response_form += `<td> ${result[i].Teacher_email}</td></tr>`;
+      }
+      response_form += "</table>";
+      response_form += `<input type="submit" value="Another Query?"> </form>`;
+      response.send(response_form);
+    });
+  }
+  
+  app.post("/timeslot_availability_day", function (request, response) {
+  let POST = request.body;
+  console.log(request.body)
+  Timeslot_Day_DB(POST, response);
+  });
 
 
 //END OF CLEMENT'S CODE
@@ -699,6 +743,7 @@ function Studentquery_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
     for (i in result) {
@@ -738,7 +783,8 @@ function availableclassAll_Query(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="searchAndUpdate.html" method="GET">`;
+    response_form = `<form action="availability.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
     for (i in result) {
