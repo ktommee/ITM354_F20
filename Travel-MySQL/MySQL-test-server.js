@@ -282,8 +282,13 @@ app.post("/process_query", function (request, response) {
   query_DB(POST, response);
 }); */
 
-//CLEMENT'S CODE FOR TEACHER'S SCHEDULE OUTPUT
-//THIS IS BASED OFF THE SAMPLE DATABASE
+//CLEMENT'S CODE START
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+//CODE FOR TEACHER'S SCHEDULE OUTPUT
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 function Teachquery_DB(POST, response) {
   teachfname = POST['teach-fname'];      // Grab the parameters from the submitted form
   teachlname = POST['teach-lname'];
@@ -320,7 +325,8 @@ Teachquery_DB(POST, response);
 });
 
 //CODE FOR STUDENT REGISTRATION TIME 
-//WHEN DID THEY REGISTER
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 function StudentRegInfo_DB(POST, response) {
   dateBegin = POST['date-begin'];      // Grab the parameters from the submitted form
   dateEnding = POST['date-ending'];
@@ -353,8 +359,8 @@ StudentRegInfo_DB(POST, response);
 });
 
 //Active Status Report
-//
-//
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 function ActiveStatus_DB(POST, response) {
 status = POST['student_activity'];      // Grab the parameters from the submitted form
   
@@ -386,8 +392,8 @@ ActiveStatus_DB(POST, response);
 });
 
 //Tuition Payment Report
-//
-//
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 function Tuition_DB(POST, response) {
        // Grab the parameters from the submitted form
   
@@ -415,6 +421,222 @@ app.post("/tuition_payment", function (request, response) {
 let POST = request.body;
 Tuition_DB(POST, response);
 });
+
+//Student_House_Analysis
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Graph_DB(POST, response) {
+  // Grab the parameters from the submitted form
+
+query = "SELECT Student_city, COUNT(Student_city) AS Number_Of_Students FROM Student GROUP BY Student_city";
+con.query(query, function (err, result, fields) {   // Run the query
+if (err) throw err;
+console.log(result);
+
+//var res_string = JSON.stringify(result);
+//var res_json = JSON.parse(res_string);
+let labels = [];
+let data = [];
+
+for(let i = 0; i < result.length; i++) {
+  labels.push('"' + result[i]["Student_city"] + '"');
+  data.push(result[i]["Number_Of_Students"]);
+}
+
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<body>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<script type="text/javascript">
+var popCanvas = document.getElementById("popChart");
+var barChart = new Chart(popCanvas, {
+  type: 'horizontalBar',
+  data: {
+    labels: [${labels}],
+    datasets: [{
+      label: 'Number of Students',
+      data: [${data}],
+      backgroundColor: 'gray'
+    }]
+  },
+  "options":{"scales":{"xAxes":[{"ticks":{"beginAtZero":true, max: 5, min: 0, stepSize: 1}}]}}
+});
+</script>
+</body>`;
+
+
+response_form += `<input type="submit" value="Another Query?"> </form>`;
+response.send(response_form);
+
+});
+}
+
+app.post("/student_house_analysis", function (request, response) {
+let POST = request.body;
+Graph_DB(POST, response);
+});
+
+//Student_School_Analysis
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Graph_DB(POST, response) {
+  // Grab the parameters from the submitted form
+
+query = "SELECT School, COUNT(School) AS Number_Of_Students FROM Student GROUP BY School";
+con.query(query, function (err, result, fields) {   // Run the query
+if (err) throw err;
+console.log(result);
+
+//var res_string = JSON.stringify(result);
+//var res_json = JSON.parse(res_string);
+let labels = [];
+let data = [];
+
+for(let i = 0; i < result.length; i++) {
+  labels.push('"' + result[i]["School"] + '"');
+  data.push(result[i]["Number_Of_Students"]);
+}
+
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<body>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<script type="text/javascript">
+var popCanvas = document.getElementById("popChart");
+var barChart = new Chart(popCanvas, {
+  type: 'horizontalBar',
+  data: {
+    labels: [${labels}],
+    datasets: [{
+      label: 'Number of Students',
+      data: [${data}],
+      backgroundColor: 'gray'
+    }]
+  },
+  "options":{"scales":{"xAxes":[{"ticks":{"beginAtZero":true, max: 5, min: 0, stepSize: 1}}]}}
+});
+</script>
+</body>`;
+
+
+response_form += `<input type="submit" value="Another Query?"> </form>`;
+response.send(response_form);
+
+});
+}
+
+app.post("/student_school_analysis", function (request, response) {
+let POST = request.body;
+Graph_DB(POST, response);
+});
+
+//Student_Lesson_Analysis
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Graph_DB(POST, response) {
+  // Grab the parameters from the submitted form
+
+query = "SELECT CONCAT(L_day, ' ', L_time) AS Time, Student_lesson_id, COUNT(Student_lesson_id) AS Number_Of_Students FROM Student, Lesson_slot WHERE Lesson_id = Student_lesson_id GROUP BY Student_lesson_id";
+con.query(query, function (err, result, fields) {   // Run the query
+if (err) throw err;
+console.log(result);
+
+//var res_string = JSON.stringify(result);
+//var res_json = JSON.parse(res_string);
+let labels = [];
+let data = [];
+
+for(let i = 0; i < result.length; i++) {
+  labels.push('"' + result[i]["Time"] + '"');
+  data.push(result[i]["Number_Of_Students"]);
+}
+
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<body>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<script type="text/javascript">
+var popCanvas = document.getElementById("popChart");
+var barChart = new Chart(popCanvas, {
+  type: 'doughnut',
+  data: {
+    labels: [${labels}],
+    datasets: [{
+      label: 'Number of Students',
+      data: [${data}],
+      backgroundColor: ["red", "blue", "green", "pink", "orange", "cyan", "gray", "purple"]
+    }]
+  },
+});
+</script>
+</body>`;
+
+
+response_form += `<input type="submit" value="Another Query?"> </form>`;
+response.send(response_form);
+
+});
+}
+
+app.post("/student_lesson_analysis", function (request, response) {
+let POST = request.body;
+Graph_DB(POST, response);
+});
+
+//Student_Lesson_Analysis
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Graph_DB(POST, response) {
+  // Grab the parameters from the submitted form
+
+query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Lesson_teacher_id, COUNT(Lesson_teacher_id) AS Number_Of_Lessons FROM Teachers, Lesson_slot WHERE Teacher_id = Lesson_teacher_id GROUP BY Lesson_teacher_id";
+con.query(query, function (err, result, fields) {   // Run the query
+if (err) throw err;
+console.log(result);
+
+//var res_string = JSON.stringify(result);
+//var res_json = JSON.parse(res_string);
+let labels = [];
+let data = [];
+
+for(let i = 0; i < result.length; i++) {
+  labels.push('"' + result[i]["Teacher_name"] + '"');
+  data.push(result[i]["Number_Of_Lessons"]);
+}
+
+response_form = `<form action="queries.html" method="GET">`;
+response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<body>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
+<script type="text/javascript">
+var popCanvas = document.getElementById("popChart");
+var barChart = new Chart(popCanvas, {
+  type: 'doughnut',
+  data: {
+    labels: [${labels}],
+    datasets: [{
+      label: 'Number of Lessons',
+      data: [${data}],
+      backgroundColor: ["red", "blue", "green"]
+    }]
+  },
+});
+</script>
+</body>`;
+
+
+response_form += `<input type="submit" value="Another Query?"> </form>`;
+response.send(response_form);
+
+});
+}
+
+app.post("/teacher_workload_analysis", function (request, response) {
+let POST = request.body;
+Graph_DB(POST, response);
+});
+
+
 //END OF CLEMENT'S CODE
 
 //Joey's Code for forms and queries
