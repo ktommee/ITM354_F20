@@ -15,7 +15,7 @@ header.innerHTML = (`
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="/teacher_schedule.html" class="button1">Lesson Schedule</a>
+       <a href="#" class="button1">Lesson Schedule</a>
        <a href="/index.html" class="button1">Available Classrooms</a>
        <a href="/searchAndUpdate.html" class="button1">Student Information</a>
      
