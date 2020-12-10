@@ -3,49 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Student Registration</title>
-    <link href="updateCSS.css" rel="stylesheet" type="text/css">
-
-    <script type="text/javascript">
-        //<!--
-            function toggle_visibility(id) {
-               var e = document.getElementById(id);
-               if(e.style.display == 'block')
-                  e.style.display = 'none';
-               else
-                  e.style.display = 'block';
-            }
-        //-->
-        //Script for 'Showing element on button press'
-        //Help: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-            function myFunctionregapps() {
-                var x = document.getElementById("queryDIVregapps");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            } 
-            function myFunction2() {
-                var x = document.getElementById("queryDIV2");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            } 
-            function myFunction3() {
-                var x = document.getElementById("queryDIV3");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            } 
-    </script>
-
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <!--Popup Boxes-->
     <!--Popup Help From: https://www.youtube.com/watch?v=VnHvVz_bFKo-->
     
@@ -191,5 +153,33 @@
         </p>
     </div>
 
+=======
+    <div id="main-header"></div>
+    <div class="container">
+    <H1>Student Analysis</H1>
+    <Form action="/student_house_analysis" method="POST">
+        <input type="submit" value="Student's Household Location">
+    </Form>
+    <Form action="/student_school_analysis" method="POST">
+        <input type="submit" value="Student's School">
+    </Form>
+    <Form action="/student_lesson_analysis" method="POST">
+        <input type="submit" value="Student Lessons">
+    </Form>
+
+    <H1>Teacher Analysis</H1>
+    <Form action="/teacher_workload_analysis" method="POST">
+        <input type="submit" value="Teacher Workload">
+    </Form>
+
+    <Form action="/tuition_payment" method="POST">
+        <H1>Tuition Payment Info</H1>
+        <input type="submit" value="Find Tuition">
+    </Form>
+</div>
+    <br>
+    <footer id="main-footer"></footer>
+    <script type="text/javascript" src="teacher.js"></script>  
+>>>>>>> 374eca4fd26b4834c8899e0b7c9dab08820b3147
 </body>
 </html>
