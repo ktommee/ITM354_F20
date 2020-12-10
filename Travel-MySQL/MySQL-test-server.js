@@ -448,10 +448,9 @@ for(let i = 0; i < result.length; i++) {
 }
 
 response_form = `<form action="queries.html" method="GET">`;
-response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -506,7 +505,7 @@ response_form = `<form action="queries.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -561,7 +560,7 @@ response_form = `<form action="queries.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -579,7 +578,7 @@ var barChart = new Chart(popCanvas, {
 </body>`;
 
 
-response_form += `<br><input type="submit" value="Another Query?"> </form>`;
+response_form += `<input type="submit" value="Another Query?"> </form>`;
 response.send(response_form);
 
 });
@@ -615,7 +614,7 @@ response_form = `<form action="queries.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-<canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
+<canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
 var barChart = new Chart(popCanvas, {
@@ -633,7 +632,7 @@ var barChart = new Chart(popCanvas, {
 </body>`;
 
 
-response_form += `<br><input type="submit" value="Another Query?"> </form>`;
+response_form += `<input type="submit" value="Another Query?"> </form>`;
 response.send(response_form);
 
 });
