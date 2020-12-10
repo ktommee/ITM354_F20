@@ -405,7 +405,7 @@ function Tuition_DB(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="queries.html" method="GET">`;
+    response_form = `<form action="queries.html" method="GET" >`;
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Total Revenue</td></b>`;
     for (i in result) {
@@ -635,6 +635,41 @@ app.post("/teacher_workload_analysis", function (request, response) {
 let POST = request.body;
 Graph_DB(POST, response);
 });
+
+//Timeslot_Availability_Day
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function ActiveStatus_DB(POST, response) {
+  lesson_day = POST['lesson_day'];      // Grab the parameters from the submitted form
+    
+    query = "SELECT L_day, L_time, CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Teacher_email FROM Lesson_slot, Teachers WHERE Lesson_teacher_id = Teacher_id AND Student_Capacity < 4 AND L_day = '" + lesson_day + "'";
+    con.query(query, function (err, result, fields) {   // Run the query
+      if (err) throw err;
+      console.log(result);
+      //var res_string = JSON.stringify(result);
+      //var res_json = JSON.parse(res_string);
+  
+      // Now build the response: table of results and form to do another query
+      response_form = `<form action="searchAndUpdate.html" method="GET">`;
+      response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
+      response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
+      for (i in result) {
+        response_form += `<tr><td> ${result[i].L_day}</td>`;
+        response_form += `<td> ${result[i].L_time}</td>`;
+        response_form += `<td> ${result[i].Teacher_name}</td>`;
+        response_form += `<td> ${result[i].Teacher_email}</td></tr>`;
+      }
+      response_form += "</table>";
+      response_form += `<input type="submit" value="Another Query?"> </form>`;
+      response.send(response_form);
+    });
+  }
+  
+  app.post("/timeslot_availability_day", function (request, response) {
+  let POST = request.body;
+  console.log(request.body)
+  ActiveStatus_DB(POST, response);
+  });
 
 
 //END OF CLEMENT'S CODE

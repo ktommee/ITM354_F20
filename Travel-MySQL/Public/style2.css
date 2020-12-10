@@ -206,6 +206,36 @@ img{
     background-color: rgb(255, 0, 255);
 }
 
+
+.button5 {
+	box-shadow:inset 0px -3px 7px 0px #f29ff2;
+	background:linear-gradient(to bottom, #f3bdfa 5%, #ea80e5 100%);
+	background-color:#cc52cc;
+	border-radius:50%;
+	border:1px solid #000405;
+	display:inline-block;
+	cursor:pointer;
+	color:#f0f0f0;
+	font-family: 'PT Sans Narrow',sans-serif;    
+	font-size:20px;
+	font-weight:bold;
+	padding:20px 50px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #cc52cc;
+}
+.button5:hover {
+	background: linear-gradient(to bottom, rgb(230, 173, 227) 5%, #e739ed 100%);
+	background-color: #d42acb;
+}
+
+
+
+.button5:active {
+	position: relative;
+    top: 1px;
+    background-color: rgb(255, 0, 255);
+}
+
 .column {
     float: left;
     width: 50%;
