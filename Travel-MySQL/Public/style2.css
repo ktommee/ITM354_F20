@@ -334,6 +334,11 @@ input[type=text], select, textarea {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    padding-top: 20px;
+  }
+
+  .picture {
+    margin-left:0px;
   }
 
 /* table formatting styling */
