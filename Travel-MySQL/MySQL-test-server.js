@@ -709,7 +709,7 @@ app.post('/addStudent', (request, response) => {
   })
 })
 
-//Update Student
+//Update Student Name
 //-----------------------------------------------------------------------
 app.post('/updateStudentFname', (request, response) => {
 
@@ -721,6 +721,26 @@ app.post('/updateStudentFname', (request, response) => {
     var grab_id = request.body.stu_id;
 
     connection.query(update_sql, [update_fname, grab_id], function(err, result)  { 
+      connection.release() //return the connection to the pool
+
+    })
+    //console.log(request.body)
+    response.redirect("/searchAndUpdate.html");
+  })
+})
+
+//Update Student Status
+//-----------------------------------------------------------------------
+app.post('/updateStatus', (request, response) => {
+
+  pool.getConnection((err, connection) => {
+    if(err) throw err
+    
+    var update_sql = "UPDATE student SET Active = ? WHERE Student_id = ?";
+    var update_status = request.body.upStatus;
+    var grab_id = request.body.stu_id;
+
+    connection.query(update_sql, [update_status, grab_id], function(err, result)  { 
       connection.release() //return the connection to the pool
 
     })
@@ -807,5 +827,49 @@ app.post("/allavailable", function (request, response) {
   let POST = request.body;
   availableclassAll_Query(POST, response);
   });
+
+//
+//------------------------------------------------
+function applyquery_DB(POST, response) {
+  stufname = POST['stu-fname']; // Grab the parameters from the submitted form
+  stulname = POST['stu-lname'];
+  
+  query = "SELECT * FROM student WHERE Active = '2'";
+  connection.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="newStudentReg.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+    response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>City</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Student_id}</td>`;
+      response_form += `<td> ${result[i].Student_fname}</td>`;
+      response_form += `<td> ${result[i].Student_lname}</td>`;
+      response_form += `<td> ${result[i].Student_city}</td>`;
+      response_form += `<td> ${result[i].Registration_date}</td>`;
+      response_form += `<td> ${result[i].Start_date}</td>`;
+      response_form += `<td> ${result[i].School}</td>`;
+      response_form += `<td> ${result[i].Grade}</td>`;
+      response_form += `<td> ${result[i].Student_email}</td>`;
+      response_form += `<td> ${result[i].Student_pnum}</td>`;
+      response_form += `<td> ${result[i].Active}</td>`;
+      response_form += `<td> ${result[i].Gender}</td>`;
+      response_form += `<td> ${result[i].Student_lesson_id}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Another Query?"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/apply_query", function (request, response) {
+let POST = request.body;
+applyquery_DB(POST, response);
+});
 
 app.listen(8080, () => console.log(`listening on port 8080`));

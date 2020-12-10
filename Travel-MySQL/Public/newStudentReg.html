@@ -131,11 +131,16 @@
     <div class="sidenav">
             <h2>Pull Student Applications</h2>
             <!--Remove Viewed Applications-->
-            <button onclick="myFunction2()">Remove Apps</button>
+            <form action="/apply_query" method="POST">
+                <input type="submit" value="Pending Applications">
+            </form>
             
             <!--Query by Student Applications-->
-            <button onclick="myFunctionregapps()">Show Apps</button>
+            <form action="/" method="POST">
+                <input type="submit" value="Remove Applications">
+            </form>
 
+            <!--
             <div id="queryDIVregapps">
                 <form action="/student_query" method="POST">
                     <H1>Student Search by Name</H1>
@@ -144,6 +149,7 @@
                     <input type="submit" value="Submit">
                 </form>
             </div>
+            -->
 
             
             <!--Insert other Queries Here-->

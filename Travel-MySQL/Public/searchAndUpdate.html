@@ -107,6 +107,22 @@
             </div>
         </div>
     </div>
+    <div id="popup-box10" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Student Status</h3>
+                <form action="/updateStatus" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="upStatus"><b>First Name</b></label>
+                        <input type='text' name='upStatus' placeholder="Status" required><BR>
+                    <input type="submit" value="Submit">
+                    <p><em>NOTE: 0 = Inactive, 1 = Active, 2 = Application</em></p>
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box10');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
 
     <!--Sidebar Insertion-->
     <div class="sidenav">
