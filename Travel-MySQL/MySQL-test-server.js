@@ -448,6 +448,7 @@ for(let i = 0; i < result.length; i++) {
 }
 
 response_form = `<form action="queries.html" method="GET">`;
+response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
 <canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
