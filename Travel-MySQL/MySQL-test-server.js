@@ -447,12 +447,8 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-<<<<<<< HEAD
-response_form = `<form action="analysis.html" method="GET">`;
-=======
 response_form = `<form action="queries.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
->>>>>>> 374eca4fd26b4834c8899e0b7c9dab08820b3147
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
 <canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
