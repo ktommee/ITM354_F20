@@ -405,7 +405,7 @@ function Tuition_DB(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="queries.html" method="GET" >`;
+    response_form = `<form action="analysis.html" method="GET">`;
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Total Revenue</td></b>`;
     for (i in result) {
@@ -425,7 +425,7 @@ Tuition_DB(POST, response);
 //Student_House_Analysis
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
-function House_DB(POST, response) {
+function Graph_DB(POST, response) {
   // Grab the parameters from the submitted form
 
 query = "SELECT Student_city, COUNT(Student_city) AS Number_Of_Students FROM Student GROUP BY Student_city";
@@ -443,7 +443,7 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-response_form = `<form action="queries.html" method="GET">`;
+response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
 <canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
@@ -473,13 +473,13 @@ response.send(response_form);
 
 app.post("/student_house_analysis", function (request, response) {
 let POST = request.body;
-House_DB(POST, response);
-});
+Graph_DB(POST, response);
+})
 
 //Student_School_Analysis
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
-function School_DB(POST, response) {
+function Graph_DB(POST, response) {
   // Grab the parameters from the submitted form
 
 query = "SELECT School, COUNT(School) AS Number_Of_Students FROM Student GROUP BY School";
@@ -497,7 +497,7 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-response_form = `<form action="queries.html" method="GET">`;
+response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
 <canvas id="popChart" width="150" height="50" style="display: block; height: 385px; width: 770px;"></canvas>
@@ -527,13 +527,13 @@ response.send(response_form);
 
 app.post("/student_school_analysis", function (request, response) {
 let POST = request.body;
-School_DB(POST, response);
+Graph_DB(POST, response);
 });
 
 //Student_Lesson_Analysis
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
-function Lesson_DB(POST, response) {
+function Graph_DB(POST, response) {
   // Grab the parameters from the submitted form
 
 query = "SELECT CONCAT(L_day, ' ', L_time) AS Time, Student_lesson_id, COUNT(Student_lesson_id) AS Number_Of_Students FROM Student, Lesson_slot WHERE Lesson_id = Student_lesson_id GROUP BY Student_lesson_id";
@@ -580,13 +580,13 @@ response.send(response_form);
 
 app.post("/student_lesson_analysis", function (request, response) {
 let POST = request.body;
-Lesson_DB(POST, response);
+Graph_DB(POST, response);
 });
 
-//Teacher_Workload_Analysis
+//Student_Lesson_Analysis
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
-function Workload_DB(POST, response) {
+function Graph_DB(POST, response) {
   // Grab the parameters from the submitted form
 
 query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Lesson_teacher_id, COUNT(Lesson_teacher_id) AS Number_Of_Lessons FROM Teachers, Lesson_slot WHERE Teacher_id = Lesson_teacher_id GROUP BY Lesson_teacher_id";
@@ -633,43 +633,8 @@ response.send(response_form);
 
 app.post("/teacher_workload_analysis", function (request, response) {
 let POST = request.body;
-Workload_DB(POST, response);
+Graph_DB(POST, response);
 });
-
-//Timeslot_Availability_Day
-//-----------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------
-function Timeslot_Day_DB(POST, response) {
-  lesson_day = POST['lesson_day'];      // Grab the parameters from the submitted form
-    
-    query = "SELECT L_day, L_time, CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Teacher_email FROM Lesson_slot, Teachers WHERE Lesson_teacher_id = Teacher_id AND Student_Capacity < 4 AND L_day = '" + lesson_day + "'";
-    con.query(query, function (err, result, fields) {   // Run the query
-      if (err) throw err;
-      console.log(result);
-      //var res_string = JSON.stringify(result);
-      //var res_json = JSON.parse(res_string);
-  
-      // Now build the response: table of results and form to do another query
-      response_form = `<form action="availability.html" method="GET">`;
-      response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
-      response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
-      for (i in result) {
-        response_form += `<tr><td> ${result[i].L_day}</td>`;
-        response_form += `<td> ${result[i].L_time}</td>`;
-        response_form += `<td> ${result[i].Teacher_name}</td>`;
-        response_form += `<td> ${result[i].Teacher_email}</td></tr>`;
-      }
-      response_form += "</table>";
-      response_form += `<input type="submit" value="Another Query?"> </form>`;
-      response.send(response_form);
-    });
-  }
-  
-  app.post("/timeslot_availability_day", function (request, response) {
-  let POST = request.body;
-  console.log(request.body)
-  Timeslot_Day_DB(POST, response);
-  });
 
 
 //END OF CLEMENT'S CODE
@@ -765,7 +730,7 @@ Studentquery_DB(POST, response);
 //CODE FOR All Available Classes
 //-----------------------------------------------------------------------------------------------------------------------
 function availableclassAll_Query(POST, response) { 
-  allAvailquery = "SELECT L_day, L_time, CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Teacher_email FROM lesson_slot LEFT JOIN teachers ON Lesson_teacher_id = Teacher_id WHERE Student_capacity < 4";
+  allAvailquery = "SELECT L_day, L_time, Teacher_fname, Teacher_lname, Teacher_email FROM lesson_slot LEFT JOIN teachers ON Lesson_teacher_id = Teacher_id WHERE Student_capacity < 4 ORDER BY L_day, L_time;";
   connection.query(allAvailquery, function (err, result, fields) {   // Run the query
     if (err) throw err;
     console.log(result);
@@ -773,14 +738,23 @@ function availableclassAll_Query(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="availability.html" method="GET">`;
+    response_form = `<form action="searchAndUpdate.html" method="GET">`;
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
-    response_form += `<td><B>Lesson Day</td><td><B>Time</td><td><B>Teacher Name</td><td><B>Email</td></b>`;
+    response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
     for (i in result) {
-      response_form += `<tr><td> ${result[i].L_day}</td>`;
-      response_form += `<td> ${result[i].L_time}</td>`;
-      response_form += `<td> ${result[i].Teacher_name}</td>`;
-      response_form += `<td> ${result[i].Teacher_email}</td></tr>`;
+      response_form += `<tr><td> ${result[i].Student_id}</td>`;
+      response_form += `<td> ${result[i].Student_fname}</td>`;
+      response_form += `<td> ${result[i].Student_lname}</td>`;
+      response_form += `<td> ${result[i].Student_city}</td>`;
+      response_form += `<td> ${result[i].Registration_date}</td>`;
+      response_form += `<td> ${result[i].Start_date}</td>`;
+      response_form += `<td> ${result[i].School}</td>`;
+      response_form += `<td> ${result[i].Grade}</td>`;
+      response_form += `<td> ${result[i].Student_email}</td>`;
+      response_form += `<td> ${result[i].Student_pnum}</td>`;
+      response_form += `<td> ${result[i].Active}</td>`;
+      response_form += `<td> ${result[i].Gender}</td>`;
+      response_form += `<td> ${result[i].Student_lesson_id}</td></tr>`;
     }
     response_form += "</table>";
     response_form += `<input type="submit" value="Another Query?"> </form>`;
