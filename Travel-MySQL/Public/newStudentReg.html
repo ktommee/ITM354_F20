@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="updateCSS.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        //<!--
+            function toggle_visibility(id) {
+               var e = document.getElementById(id);
+               if(e.style.display == 'block')
+                  e.style.display = 'none';
+               else
+                  e.style.display = 'block';
+            }
+        //-->
+        //Script for 'Showing element on button press'
+        //Help: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+            function myFunction() {
+                var x = document.getElementById("queryDIV1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction2() {
+                var x = document.getElementById("queryDIV2");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction3() {
+                var x = document.getElementById("queryDIV3");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+    </script>
+
+</head>
+<body>
+    <!--Popup Boxes-->
+    <!--Popup Help From: https://www.youtube.com/watch?v=VnHvVz_bFKo-->
+    
+    <!--Example
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 1 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    -->
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Add New Student Record</h3>
+                <form action="/addStudent" method="POST">
+                    <fieldset>
+                        <label for="fname">First Name:</label><br>
+                            <input type='text' name='fname' id='fname' pattern='[A-Za-z ]{1,30}' placeholder='John' title='Any capital or lowercase letters. Maximum of 30 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+                        <label for="lname">Last Name:</label><br>
+                            <input type='text' name='lname' id='lname' pattern='[A-Za-z ]{1,30}' placeholder='Doe' title='Any capital or lowercase letters. Maximum of 30 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+                        <label for="stu_city">City:</label><br>
+                            <input type='text' name='stu_city' id='stu_city' pattern='[A-Za-z ]{1,20}' placeholder='Honolulu' title='Any capital or lowercase letters. Maximum of 20 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+                        <label for="s_regDate">Registration Date:</label><br>
+                            <input type='date' name='s_regDate' id='s_regDate' required><br> <!--No validation required.-->
+                        <label for="s_startDate">Start Date:</label><br>
+                            <input type='date' name='s_startDate' id='s_startDate' required><br> <!--No validation required.-->
+                        <label for="school">School:</label><br>
+                            <input type='text' name='school' id='school' pattern='[A-Za-z ]{1,100}' title='Any capital or lowercase letters. Maximum of 100 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+                        <label for="grade">Grade:</label><br>
+                            <input type='text' name='grade' id='grade' pattern='[K1-9]{1,2}' title='K for Kindergarten or Grade 1-12' required><br> <!--Regex Validation: Contain values of capital K or Integers 1-9. Max 1 character.-->
+                        <label for="s_email">Student Email:</label><br>
+                            <input type='email' name='s_email' id='s_email' pattern='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' placeholder='youremail@gmail.com' title='Describe form requirement here' required><br> <!--Regex Validation: Any character or integer@Any character or integer.Minimum 2 of any character-->    
+                        <label for="pnumber">Phone Number:</label><br>
+                            <input type='tel' name='pnumber' id='pnumber' pattern='[-0-9]{12}' placeholder='123-456-7890' title='Test Title' required><br> <!--Regex Validation: Must contain integers of 0-9 with maximum integer amounts of 3, 2, and 3 seperated by dashes.-->
+                        <!--No need for active status form part since you're adding a student, they of course will be active-->
+                        <label for="gender">Gender</label><br>
+                            <input type='text' name='gender' id='gender' pattern='[MF]{1,1}' title='Type either M or F' required><br> <!--Regex Validation: Contain values of capital M or capital F. Min/Max = 1 character.-->
+                        <label for="tuition">Tuition:</label><br>
+                            <input type='number' step="any"  name='tuition' id='tuition' pattern='[0-9.]' title='Describe form requirement here' required><br> <!--Regex Validation: Require integers or period (for decimal)-->
+                        <label for="deposit">Deposit Amount:</label><br>
+                            <input type='number' step="any"  name='deposit' id='deposit' pattern='[0-9.]' title='Describe form requirement here' required><br> <!--Regex Validation: Require integers or period (for decimal)-->
+                        <label for="lessonID">Lesson ID:</label><br>
+                            <input type='text' name='lessonID' id='lessonID' pattern='[1-9]{1,}' title='Describe form requirement here' required><br> <!--Regex Validation:-->
+                        <input type="submit" value="Submit">
+                        </fieldset>
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div id="popup-box2" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Student First Name</h3>
+                <form action="/updateStudentFname" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="first_name"><b>First Name</b></label>
+                        <input type='text' name='first_name' placeholder="First Name" required><BR>
+                    <input type="submit" value="Submit">
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="popup-box3" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 3 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <!--Sidebar Insertion-->
+    <div class="sidenav">
+            <h2>Pull Student Applications</h2>
+            <!--Query by Student Applications-->
+            <button onclick="myFunction()">All Applications</button>
+
+            <div id="queryDIV1">
+                <form action="/student_query" method="POST">
+                    <H1>Student Search by Name</H1>
+                    Enter First Name <input type='text' name='stu-fname'><BR>
+                    Enter Last Name <input type='text' name='stu-lname'><BR>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <br>
+            
+            <!--Insert other Queries Here-->
+        
+
+    </div>
+
+    <!--Topbar Navigation-->
+    <div class="topnav">
+        <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" />
+        
+        <a href="teacher.html">Home</a>
+        <a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Add Student</a>
+        <a href="#news">Remove Student</a>
+        <a href="searchAndUpdate.html">Update Student</a>
+        <!--
+        <div class="form-popup" id="myForm">
+            <form action="/updateStudentFname" method="POST">
+                <label for="stu_id"><b>Student ID</b></label>
+                    <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                <label for="first_name"><b>First Name</b></label>
+                    <input type='text' name='first_name' placeholder="First Name" required><BR>
+                <input type="submit" value="Submit">
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        -->
+        
+        <!--
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        -->
+      </div> 
+      
+    <!-- Page content -->
+    <div class="main">
+        <br>
+        <h1>New Student Registration</h1>
+        <p>Please select an option to begin.</p>
+        <p>
+            Pending Applications can be pulled or removed on the left. <br>
+            Adding, Removing, or Updating students to the roster can be found above.
+        </p>
+    </div>
+
+</body>
+</html>
