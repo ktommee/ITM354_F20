@@ -447,10 +447,11 @@ for(let i = 0; i < result.length; i++) {
   data.push(result[i]["Number_Of_Students"]);
 }
 
-response_form = `<form action="queries.html" method="GET">`;
+response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
+<h1>Student Household Location Analysis</h1>
 <canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
@@ -506,6 +507,7 @@ response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
+<h1>Student School Analysis</h1>
 <canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
@@ -561,6 +563,7 @@ response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
+<h1>Student Lesson Analysis</h1>
 <canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
@@ -615,6 +618,7 @@ response_form = `<form action="analysis.html" method="GET">`;
 response_form += `<link rel="stylesheet" href="style2.css">`
 response_form += `<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
+<h1>Teacher Workload Analysis</h1>
 <canvas id="popChart" width="2000" height="1000" style="display: block; height: 385px; width: 770px;"></canvas>
 <script type="text/javascript">
 var popCanvas = document.getElementById("popChart");
