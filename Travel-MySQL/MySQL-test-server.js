@@ -425,7 +425,6 @@ app.post('/addStudent', (request, response) => {
 
   pool.getConnection((err, connection) => {
     if(err) throw err
-    console.log(`Connected as id ${connection.threadId}`) //??
 
     //create variable sql creating mysql query
     var forminfo = request.body;
@@ -434,11 +433,6 @@ app.post('/addStudent', (request, response) => {
     connection.query(sql, function(err, result)  {
       connection.release() //return the connection to the pool
 
-      if(!err) {
-        response.send(`Student with Name: ${forminfo.first_name} has been added`) //Doesn't quite work
-      } else {
-        console.log(err)
-      }
     })
     //console.log(request.body)
     response.redirect("/newStudentReg.html");
@@ -451,7 +445,6 @@ app.post('/updateStudentFname', (request, response) => {
 
   pool.getConnection((err, connection) => {
     if(err) throw err
-    console.log(`Connected as id ${connection.threadId}`) //??
     
     var update_sql = "UPDATE student SET Student_fname = ? WHERE Student_id = ?";
     var update_fname = request.body.first_name;

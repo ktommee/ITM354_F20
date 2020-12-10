@@ -121,7 +121,7 @@
             <!--Query by Active Status-->
             <div id="queryDIV2">
                 <form action="/active_status" method="POST">
-                    <H1>Find out the students' status</H1>
+                    <H1>Search by Student Active Status</H1>
                     <select name="student_activity">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
@@ -132,20 +132,20 @@
 
             <br>
 
-            <button onclick="myFunction3()">By Tuition Payment</button>
+            <button onclick="myFunction3()">By Register Date</button>
             <!--Query by X-->
             <div id="queryDIV3">
-                <form action="/tuition_payment" method="POST">
-                    <H1>Tuition Payment Info</H1>
-                    <input type="submit" value="Find Tuition">
+                <form action="/process_time" method="POST">
+                    <H1>Student Registration Info</H1>
+                    <fieldset>
+                    <label for="date-begin">Beginning Date:</label><br>
+                        <input type="date" name="date-begin" value="2020-12-25"><br>
+                    <label for="date-ending">Ending Date:</label><br>
+                        <input type="date" name="date-ending" value="2020-12-25"><br>
+                    <input type="submit" value="Submit">
                 </form>
             </div>  
             
-            
-        
-            
-            
-        
 
     </div>
 
@@ -213,8 +213,12 @@
       <!-- Page content -->
     <div class="main">
         <br>
-        <br>
-        <p>Select a query to begin</p>
+        <h1>Student Record Search & Updates</h1>
+        <p>Please select an option to begin.</p>
+        <p>
+            Student Records can be accessed using some common queries on the left.<br>
+            Updating Student Records in full or by individual attributes can be found above.
+        </p>
     </div>
 
 </body>
