@@ -205,6 +205,14 @@ var con = mysql.createConnection({
   password: ""
 });
 
+console.log("Connecting to localhost...");
+var connection = mysql.createConnection({
+  host: '127.0.0.1',
+  user: "root",
+  port: 3306,
+  database: "harmony",
+  password: ""
+});
 //Adding to Database
 var pool = mysql.createPool({
   connectionLimit: 10,
