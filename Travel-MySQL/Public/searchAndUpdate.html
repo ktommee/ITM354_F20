@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="updateCSS.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        //<!--
+            function toggle_visibility(id) {
+               var e = document.getElementById(id);
+               if(e.style.display == 'block')
+                  e.style.display = 'none';
+               else
+                  e.style.display = 'block';
+            }
+        //-->
+        //Script for 'Showing element on button press'
+        //Help: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+            function myFunction() {
+                var x = document.getElementById("queryDIV1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction2() {
+                var x = document.getElementById("queryDIV2");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+            function myFunction3() {
+                var x = document.getElementById("queryDIV3");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            } 
+    </script>
+
+</head>
+<body>
+    <!--Popup Boxes-->
+    <!--Popup Help From: https://www.youtube.com/watch?v=VnHvVz_bFKo-->
+    
+    <!--Example
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 1 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    -->
+    <div id="popup-box1" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Full Student Record</h3>
+                <form action="/updateX" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="first_name"><b>First Name</b></label>
+                        <input type='text' name='first_name' placeholder="First Name" required><BR>
+                    <input type="submit" value="Submit">
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="popup-box2" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Update Student First Name</h3>
+                <form action="/updateStudentFname" method="POST">
+                    <label for="stu_id"><b>Student ID</b></label>
+                        <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                    <label for="first_name"><b>First Name</b></label>
+                        <input type='text' name='first_name' placeholder="First Name" required><BR>
+                    <input type="submit" value="Submit">
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="popup-box3" class="popup-position">
+        <div id="popup-wrapper">
+            <div id="popup-container">
+                <h3>Box 3 Test</h3>
+                <p>Test Successful</p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Close Form</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!--Sidebar Insertion-->
+    <div class="sidenav">
+            <h2>Parameter Queries</h2>
+            <!--Query by Student Name-->
+            <button onclick="myFunction()">By Name</button>
+
+            <div id="queryDIV1">
+                <form action="/student_query" method="POST">
+                    <H1>Student Search by Name</H1>
+                    Enter First Name <input type='text' name='stu-fname'><BR>
+                    Enter Last Name <input type='text' name='stu-lname'><BR>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <br>
+
+            <button onclick="myFunction2()">By Active Status</button>
+            <!--Query by Active Status-->
+            <div id="queryDIV2">
+                <form action="/active_status" method="POST">
+                    <H1>Find out the students' status</H1>
+                    <select name="student_activity">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div> 
+
+            <br>
+
+            <button onclick="myFunction3()">By Tuition Payment</button>
+            <!--Query by X-->
+            <div id="queryDIV3">
+                <form action="/tuition_payment" method="POST">
+                    <H1>Tuition Payment Info</H1>
+                    <input type="submit" value="Find Tuition">
+                </form>
+            </div>  
+            
+            
+        
+            
+            
+        
+
+    </div>
+
+    <!--Topbar Navigation-->
+    <div class="topnav">
+        <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" />
+        
+        <a href="#news">Home</a>
+
+        <div class="dropdown">
+            <span>General Updates</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');">First Name</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box2');">Last Name</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box3');">Gender</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box4');">Registration</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box5');">Start Date</a></br>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Update Contacts</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box6');">City</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box7');">Email</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box8');">Phone Number</a></br>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Update Class Status</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box9');">Active Status</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box10');">Grade</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box11');">Lesson Time</a></br>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Update Financials</span>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box12');">Tuition</a></br>
+                <a href="javascript:void(0)" onclick="toggle_visibility('popup-box13');">Deposit Amount</a></br>
+            </div>
+        </div>
+        <!--
+        <div class="form-popup" id="myForm">
+            <form action="/updateStudentFname" method="POST">
+                <label for="stu_id"><b>Student ID</b></label>
+                    <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+                <label for="first_name"><b>First Name</b></label>
+                    <input type='text' name='first_name' placeholder="First Name" required><BR>
+                <input type="submit" value="Submit">
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        -->
+        
+        <!--
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        -->
+      </div> 
+      
+      <!-- Page content -->
+    <div class="main">
+        <br>
+        <br>
+        <p>Select a query to begin</p>
+    </div>
+
+</body>
+</html>

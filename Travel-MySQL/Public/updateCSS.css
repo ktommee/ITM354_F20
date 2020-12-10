@@ -1,0 +1,206 @@
+/*---------------------------------------------------------------------------*/
+/*For Sidebar */
+/*Code obtained from: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
+/*---------------------------------------------------------------------------*/
+
+/* The sidebar menu */
+ .sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 3; /* Stay on second-top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #72bcd4; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    margin-top: 86px;
+    overflow: visible;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    margin-top: 100px;
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } 
+
+  .sidenav button {
+    background-color: #72bcd4; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-left: 9px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:180px;
+    position: relative;
+  }
+
+  .sidenav button:hover {
+    background-color: white; /* Green */
+    color: black;
+  }
+
+/*---------------------------------------------------------------------------*/
+/*For Pop-up Forms*/
+/*Code obtained from here: https://www.youtube.com/watch?v=VnHvVz_bFKo */
+/*---------------------------------------------------------------------------*/
+.popup-position {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}
+#popup-wrapper{
+    width: 500px;
+    margin: 70px auto;
+    text-align: left;
+}
+#popup-container {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/*---------------------------------------------------------------------------*/
+/*For Top Navigation*/
+/*Code obtained from here: https://www.w3schools.com/howto/howto_js_topnav.asp */
+/*---------------------------------------------------------------------------*/
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: white;
+    overflow: visible;
+    width: 100%;
+    height:auto;
+    top: 0; /* Stay at the top */
+    left: 0;
+    margin-left:0;
+    position: fixed; 
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    color: black;
+    text-align: center;
+    padding: 30px;
+    vertical-align: top;
+    margin: auto;
+    display:inline-block;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(255, 187, 238);
+    color: black;
+  }
+  
+  .topnav img {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+
+/*---------------------------------------------------------------------------*/
+/*For Dropdown Top-nav*/
+/*---------------------------------------------------------------------------*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    padding-top: 30px;
+    vertical-align: top;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: auto;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+    padding: 16px 5px 5px 5px;
+    z-index: 1;
+    overflow: visible;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    overflow: visible;
+    width: auto;
+}
+
+span {
+    font-size: 12pt;
+    color: black;
+    text-align: center;
+    padding: 16px;
+}
+
+
+/*---------------------------------------------------------------------------*/
+/*For Main Area*/
+/*---------------------------------------------------------------------------*/
+body {
+    background-color: lightblue;
+}
+
+body p {
+    margin-left: 300px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+/*---------------------------------------------------------------------------*/
+/*For Parameters*/
+/*---------------------------------------------------------------------------*/
+#queryDIV1 {
+    margin-left: 260px;
+    margin-top: -100px;
+    width: 1000px;
+    display: none;
+    background-color: lightblue;
+}
+#queryDIV2 {
+    margin-left: 260px;
+    margin-top: -150px;
+    width: 1000px;
+    display: none;
+    background-color: lightblue;
+}
+#queryDIV3 {
+    margin-left: 260px;
+    margin-top: -200px;
+    width: 1000px;
+    display: none;
+    background-color: lightblue;
+}
