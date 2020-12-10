@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Student Registration</title>
     <link href="updateCSS.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
@@ -18,8 +18,8 @@
         //-->
         //Script for 'Showing element on button press'
         //Help: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-            function myFunction() {
-                var x = document.getElementById("queryDIV1");
+            function myFunctionregapps() {
+                var x = document.getElementById("queryDIVregapps");
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 } else {
@@ -130,10 +130,13 @@
     <!--Sidebar Insertion-->
     <div class="sidenav">
             <h2>Pull Student Applications</h2>
+            <!--Remove Viewed Applications-->
+            <button onclick="myFunction2()">Remove Apps</button>
+            
             <!--Query by Student Applications-->
-            <button onclick="myFunction()">All Applications</button>
+            <button onclick="myFunctionregapps()">Show Apps</button>
 
-            <div id="queryDIV1">
+            <div id="queryDIVregapps">
                 <form action="/student_query" method="POST">
                     <H1>Student Search by Name</H1>
                     Enter First Name <input type='text' name='stu-fname'><BR>
@@ -142,7 +145,6 @@
                 </form>
             </div>
 
-            <br>
             
             <!--Insert other Queries Here-->
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Information</title>
     <link href="updateCSS.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
@@ -41,7 +41,15 @@
                 } else {
                     x.style.display = "none";
                 }
-            } 
+            }
+            function myFunction4() {
+                var x = document.getElementById("queryDIV4");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }  
     </script>
 
 </head>
@@ -104,8 +112,9 @@
     <div class="sidenav">
             <h2>Parameter Queries</h2>
             <!--Query by Student Name-->
-            <button onclick="myFunction()">By Name</button>
+            <div id="sidebutton1"><button onclick="myFunction()">By Name</button></div>
 
+            
             <div id="queryDIV1">
                 <form action="/student_query" method="POST">
                     <H1>Student Search by Name</H1>
@@ -117,22 +126,20 @@
 
             <br>
 
-            <button onclick="myFunction2()">By Active Status</button>
+            <div id="sidebutton4"><button onclick="myFunction4()">By Teacher</button></div>
             <!--Query by Active Status-->
-            <div id="queryDIV2">
-                <form action="/active_status" method="POST">
-                    <H1>Search by Student Active Status</H1>
-                    <select name="student_activity">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
-                    </select>
+            <div id="queryDIV4">
+                <form action="/teacher_query" method="POST">
+                    <H1>Search by Teacher Assignment</H1>
+                    Enter First Name <input type='text' name='teach-fname'><BR>
+                    Enter Last Name <input type='text' name='teach-lname'><BR>
                     <input type="submit" value="Submit">
                 </form>
             </div> 
 
             <br>
 
-            <button onclick="myFunction3()">By Register Date</button>
+            <div id="sidebutton3"><button onclick="myFunction3()">By Reg. Date</button></div>
             <!--Query by X-->
             <div id="queryDIV3">
                 <form action="/process_time" method="POST">
@@ -144,7 +151,20 @@
                         <input type="date" name="date-ending" value="2020-12-25"><br>
                     <input type="submit" value="Submit">
                 </form>
-            </div>  
+            </div>
+            
+            <div id="sidebutton2"><button onclick="myFunction2()">By Active Status</button></div>
+            <!--Query by Active Status-->
+            <div id="queryDIV2">
+                <form action="/active_status" method="POST">
+                    <H1>Search by Student Active Status</H1>
+                    <select name="student_activity">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div> 
             
 
     </div>

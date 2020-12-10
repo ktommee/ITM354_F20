@@ -58,7 +58,6 @@
     display: block;
     font-size: 16px;
     width:180px;
-    position: absolute;
   }
 
   .sidenav button:hover {
@@ -66,6 +65,28 @@
     color: black;
   }
 
+  #sidebutton1 {
+    position: fixed;
+    left: 0;
+  }
+
+  #sidebutton2 {
+    position: fixed;
+    left: 0;
+    margin-top: 90px;
+  }
+
+  #sidebutton3 {
+    position: fixed;
+    left: 0;
+    margin-top: 50px;
+  }
+
+  #sidebutton4 {
+    position: fixed;
+    left: 0;
+    margin-top: 25px;
+  }
 /*---------------------------------------------------------------------------*/
 /*For Pop-up Forms*/
 /*Code obtained from here: https://www.youtube.com/watch?v=VnHvVz_bFKo */
@@ -189,23 +210,39 @@ h2 {
 /*For Parameters*/
 /*---------------------------------------------------------------------------*/
 #queryDIV1 {
-    margin-left: 260px;
-    margin-top: -100px;
-    width: 1000px;
+    margin-left: 215px;
+    margin-top: -50px;
+    width: 700px;
     display: none;
     background-color: lightblue;
 }
 #queryDIV2 {
-    margin-left: 260px;
-    margin-top: -150px;
-    width: 1000px;
+    margin-left: 215px;
+    margin-top: -110px;
+    width: 700px;
+    height: 700px;
     display: none;
     background-color: lightblue;
 }
 #queryDIV3 {
-    margin-left: 260px;
-    margin-top: -200px;
-    width: 1000px;
+    margin-left: 215px;
+    margin-top: -120px;
+    width: 700px;
     display: none;
     background-color: lightblue;
+}
+#queryDIV4 {
+  margin-left: 215px;
+  margin-top: -90px;
+  width: 700px;
+  display: none;
+  background-color: lightblue;
+}
+#queryDIVregapps {
+  margin-left: 215px;
+  margin-top: -200px;
+  width: 700px;
+  height: 700px;
+  display: none;
+  background-color: lightblue;
 }

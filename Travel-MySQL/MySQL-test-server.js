@@ -296,7 +296,7 @@ function Teachquery_DB(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="teacher_schedule.html" method="GET">`;
+    response_form = `<form action="searchAndUpdate.html" method="GET">`;
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
     response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Student Gender</td><td><B>Student Phone Number</td><td><B>Student Email</td></b>`;
     for (i in result) {
