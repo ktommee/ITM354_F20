@@ -408,7 +408,7 @@ function Tuition_DB(POST, response) {
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="queries.html" method="GET" >`;
+    response_form = `<form action="analysis.html" method="GET" >`;
     response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Total Revenue</td></b>`;
@@ -705,7 +705,7 @@ app.post('/addStudent', (request, response) => {
 
     })
     //console.log(request.body)
-    response.redirect("/newStudentReg.html");
+    response.redirect("/action_confirmed.html");
   })
 })
 
@@ -745,7 +745,7 @@ app.post('/updateStatus', (request, response) => {
 
     })
     //console.log(request.body)
-    response.redirect("/searchAndUpdate.html");
+    response.redirect("/action_confirmed2.html");
   })
 })
 
