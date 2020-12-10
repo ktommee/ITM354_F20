@@ -519,3 +519,6 @@ th {
     float: center;
   }
 
+ #report_table {
+  text-align: center;
+}
