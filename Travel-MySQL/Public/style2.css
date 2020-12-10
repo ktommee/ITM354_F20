@@ -5,7 +5,7 @@ body {
     background-color: rgb(133, 191, 201);
     background-size: 100%;
     font-family: 'PT Sans Narrow',sans-serif;   
-    padding-top: 150px; 
+    padding-top: 160px; 
     position: sticky;
     z-index:3;
 }
@@ -378,7 +378,7 @@ th {
 
 /* Dropdown Button */
 .dropbtn {
-    box-shadow:inset 0px -3px 7px 0px #9fb4f2;
+  box-shadow:inset 0px -3px 7px 0px #9fb4f2;
 	background:linear-gradient(to bottom, #39b4ed 5%, #2a9ed4 100%);
 	background-color:#39b4ed;
 	border-radius:4px;
@@ -442,7 +442,7 @@ th {
   .text-block {
     position: absolute;
     top: 20%;
-    left: 60%;
+    left: 55%;
     background-color: rgba(167, 197, 197, 0.637);
     color: white;
   }
@@ -455,6 +455,13 @@ th {
   .column2 {
     float: left;
     width: 33.33%;
+  }
+
+  .column3 {
+    float: left;
+    width: 33.33%;
+    padding-left: 25px;
+    padding-bottom: 5px;
   }
 
   /* Clear floats after the columns */
