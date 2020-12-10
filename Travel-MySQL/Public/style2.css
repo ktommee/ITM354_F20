@@ -60,6 +60,15 @@ h4 {
     font-size:35px;  
 }
 
+h5 {
+  text-align: center;
+  color:black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'PT Sans Narrow',sans-serif;  
+  font-size:20px;  
+}
+
 
 .boxed {
     border: 1px solid green;
