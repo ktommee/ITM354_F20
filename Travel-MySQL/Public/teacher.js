@@ -9,12 +9,13 @@ header.innerHTML = (`
                     <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" alt="Nobu Sakurai Piano Studios Logo" /></a>
                 </div>
    </div>
+   
    <div align="right">
   <a href="/index.html" class="button2">Student View</a>
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="/index.html" class="button1">Class Schedule</a>
+       <a href="/teacher_schedule.html" class="button1">Lesson Schedule</a>
        <a href="/index.html" class="button1">Available Classrooms</a>
        <a href="/searchAndUpdate.html" class="button1">Student Information</a>
      
