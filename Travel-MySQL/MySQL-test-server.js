@@ -366,7 +366,7 @@ StudentRegInfo_DB(POST, response);
 function ActiveStatus_DB(POST, response) {
 status = POST['student_activity'];      // Grab the parameters from the submitted form
   
-  query = "SELECT Student_fname, Student_lname FROM Student WHERE Active = '" + status + "'";
+  query = "SELECT Student_id, Student_fname, Student_lname FROM Student WHERE Active = '" + status + "'";
   con.query(query, function (err, result, fields) {   // Run the query
     if (err) throw err;
     console.log(result);
@@ -377,9 +377,10 @@ status = POST['student_activity'];      // Grab the parameters from the submitte
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
     response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
-    response_form += `<td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
+    response_form += `<td><B>Student ID</td><td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
     for (i in result) {
-      response_form += `<tr><td> ${result[i].Student_fname}</td>`;
+      response_form += `<tr><td> ${result[i].Student_id}</td>`
+      response_form += `<td> ${result[i].Student_fname}</td>`;
       response_form += `<td> ${result[i].Student_lname}</td></tr>`;
     }
     response_form += "</table>";
@@ -845,21 +846,16 @@ function applyquery_DB(POST, response) {
     response_form = `<form action="newStudentReg.html" method="GET">`;
     response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
-    response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>City</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
+    response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>City</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td></b>`;
     for (i in result) {
       response_form += `<tr><td> ${result[i].Student_id}</td>`;
       response_form += `<td> ${result[i].Student_fname}</td>`;
       response_form += `<td> ${result[i].Student_lname}</td>`;
       response_form += `<td> ${result[i].Student_city}</td>`;
-      response_form += `<td> ${result[i].Registration_date}</td>`;
-      response_form += `<td> ${result[i].Start_date}</td>`;
       response_form += `<td> ${result[i].School}</td>`;
       response_form += `<td> ${result[i].Grade}</td>`;
       response_form += `<td> ${result[i].Student_email}</td>`;
-      response_form += `<td> ${result[i].Student_pnum}</td>`;
-      response_form += `<td> ${result[i].Active}</td>`;
-      response_form += `<td> ${result[i].Gender}</td>`;
-      response_form += `<td> ${result[i].Student_lesson_id}</td></tr>`;
+      response_form += `<td> ${result[i].Student_pnum}</td></tr>`;
     }
     response_form += "</table>";
     response_form += `<input type="submit" value="Another Query?"> </form>`;

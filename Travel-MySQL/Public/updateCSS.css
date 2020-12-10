@@ -246,3 +246,18 @@ h2 {
   display: none;
   background-color: lightblue;
 }
+
+input[type=submit] {
+  background-color: #72bcd4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: black;
+}
