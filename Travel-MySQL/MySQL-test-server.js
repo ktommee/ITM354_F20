@@ -429,7 +429,7 @@ app.post('/addStudent', (request, response) => {
 
     //create variable sql creating mysql query
     var forminfo = request.body;
-    var sql = "INSERT INTO student (X) VALUES (null, '" + request.body.fname + "', '" + request.body.lname + "',  '" + request.body.deposit + "', '" + request.body.depdate + "', '" + request.body.pnumber + "', '" + request.body.s_email + "', '" + request.body.gender + "', '" + request.body.s_address + "', '" + request.body.s_startDate + "', '" + request.body.lessonID + "')";
+    var sql = "INSERT INTO student (Student_id, Student_fname, Student_lname, Student_city, Registration_date, Start_date, School, Grade, Student_email, Student_pnum, Active, Gender, Tuition, Deposit_amount, Student_lesson_id) VALUES (null, '" + request.body.fname + "', '" + request.body.lname + "',  '" + request.body.stu_city + "', '" + request.body.s_regDate + "', '" + request.body.s_startDate + "',  '" + request.body.school + "', '" + request.body.grade + "', '" + request.body.s_email + "', '" + request.body.pnumber + "', '1', '" + request.body.gender + "', '" + request.body.tuition + "', '" + request.body.deposit + "', '" + request.body.lessonID + "')";
     
     connection.query(sql, function(err, result)  {
       connection.release() //return the connection to the pool
@@ -440,7 +440,8 @@ app.post('/addStudent', (request, response) => {
         console.log(err)
       }
     })
-    console.log(request.body)
+    //console.log(request.body)
+    response.redirect("/newStudentReg.html");
   })
 })
 
@@ -460,7 +461,7 @@ app.post('/updateStudentFname', (request, response) => {
       connection.release() //return the connection to the pool
 
     })
-    console.log(request.body)
+    //console.log(request.body)
     response.redirect("/searchAndUpdate.html");
   })
 })
