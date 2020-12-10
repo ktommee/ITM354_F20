@@ -510,3 +510,12 @@ th {
     clear: both;
   }
 
+  /*Center Align Class Availability Page*/
+  #centeravailable {
+    text-align: center;
+  }
+  
+  .column_avail {
+    float: center;
+  }
+

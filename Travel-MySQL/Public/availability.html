@@ -10,27 +10,49 @@
     <div id="main-header"></div>
     <div class="container">
 <h1>Class Availability</h1>
+<div id="centeravailable">
         <div class="row">
-            <div class="column">
+            <div class="column_avail">
+                <h3>Search All Available Classes</h3>
                 <form action="/allavailable" method="POST">
                 <!--<a href="/testimonies.html" class="button5">Search by <br>All</a>-->
                 <input type="submit" value="Search All Available">
                 </form>
             </div>
-            <div class="column">
-              <a href="/testimonies.html" class="button5">Search by <br>Day</a>
-            </div>
         </div>
-<br>
-<br>
+        <hr>
         <div class="row">
-            <div class="column">
-                <a href="/testimonies.html" class="button5">Search by <br>Teacher</a>
-            </div>
-            <div class="column">
-              <a href="/testimonies.html" class="button5">Search by <br>Time</a>
+            <div class="column_avail">
+                <h3>Search by Day of the Week</h3>
+                <form action="/timeslot_availability_day" method="POST">
+                    <select name="lesson_day">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                    </select>
+                    <input type="submit" value="Search by Day">
+                </form>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="column_avail">
+                <h3>Search by Piano Instructor</h3>
+                <form action="/timeslot_by_teacher" method="POST">
+                    <select name="lesson_day">
+                        <option value="Monday">Nobu Sakurai</option>
+                        <option value="Tuesday">Jensen Blue</option>
+                        <option value="Wednesday">Anthony Chantavy</option>
+                    </select>
+                    <input type="submit" value="Search by Teacher">
+                </form>
+            </div>
+        </div>
+</div>
+<br>
+<br>
+        
      
 
   </div>
