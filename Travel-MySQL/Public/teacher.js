@@ -15,13 +15,9 @@ header.innerHTML = (`
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="#" class="button1">Lesson Schedule</a>
-       <a href="/index.html" class="button1">Available Classrooms</a>
+       <a href="/index.html" class="button1">Analysis</a>
        <a href="/searchAndUpdate.html" class="button1">Student Information</a>
      
-
-  
-   <div align="center" style="background-color:paleturquoise">
    <a href="/newStudentReg.html" class="button1">New Student Registration</a>
  
  <div class="dropdown">

@@ -657,7 +657,7 @@ function Timeslot_Day_DB(POST, response) {
       //var res_json = JSON.parse(res_string);
   
       // Now build the response: table of results and form to do another query
-      response_form = `<form action="searchAndUpdate.html" method="GET">`;
+      response_form = `<form action="availability.html" method="GET">`;
       response_form += `<link rel="stylesheet" href="style2.css">`
       response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
       response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
@@ -774,7 +774,7 @@ Studentquery_DB(POST, response);
 //CODE FOR All Available Classes
 //-----------------------------------------------------------------------------------------------------------------------
 function availableclassAll_Query(POST, response) { 
-  allAvailquery = "SELECT L_day, L_time, Teacher_fname, Teacher_lname, Teacher_email FROM lesson_slot LEFT JOIN teachers ON Lesson_teacher_id = Teacher_id WHERE Student_capacity < 4";
+  allAvailquery = "SELECT L_day, L_time, CONCAT(Teacher_fname, ' ', Teacher_lname) AS Teacher_name, Teacher_email FROM lesson_slot LEFT JOIN teachers ON Lesson_teacher_id = Teacher_id WHERE Student_capacity < 4";
   connection.query(allAvailquery, function (err, result, fields) {   // Run the query
     if (err) throw err;
     console.log(result);
@@ -785,12 +785,11 @@ function availableclassAll_Query(POST, response) {
     response_form = `<form action="availability.html" method="GET">`;
     response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5">`;
-    response_form += `<td><B>Lesson Day</td><td><B>Time</td><td><B>Teacher First Name</td><td><B>Last Name</td><td><B>Email</td></b>`;
+    response_form += `<td><B>Lesson Day</td><td><B>Time</td><td><B>Teacher Name</td><td><B>Email</td></b>`;
     for (i in result) {
       response_form += `<tr><td> ${result[i].L_day}</td>`;
       response_form += `<td> ${result[i].L_time}</td>`;
-      response_form += `<td> ${result[i].Teacher_fname}</td>`;
-      response_form += `<td> ${result[i].Teacher_lname}</td>`;
+      response_form += `<td> ${result[i].Teacher_name}</td>`;
       response_form += `<td> ${result[i].Teacher_email}</td></tr>`;
     }
     response_form += "</table>";
