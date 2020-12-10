@@ -24,8 +24,8 @@ header.innerHTML = (`
      <div class="dropdown">
      <button class="dropbtn">Student Information</button>
      <div align = "left" class="dropdown-content">
-       <a href="#">Class Availability</a>
-       <a href="#">Student Registration</a>
+     <a href="apply.html">Apply for Time Slot</a> 
+     <a href="availability.html">Class Availability</a>
        <a href="feedback.html">Submit Feedback</a>
      </div>
    </div>

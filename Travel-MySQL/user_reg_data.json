@@ -31,11 +31,11 @@
         "registrationDate": "Fri Dec 13 2019 11:54:21 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "monday"
     },
-    "kristina": {
-        "username": "kristina",
-        "password": "kristina",
-        "full_name": "kristina t",
-        "email": "kristina@gmail.com",
+    "nobu": {
+        "username": "nobu",
+        "password": "nobu",
+        "full_name": "nobu s",
+        "email": "nobu@gmail.com",
         "registrationDate": "Wed Dec 18 2019 21:22:54 GMT-1000 (Hawaii-Aleutian Standard Time)"
     },
     "brandon": {
@@ -45,6 +45,13 @@
         "email": "brandon@gmail.com",
         "registrationDate": "Wed Dec 18 2019 21:25:20 GMT-1000 (Hawaii-Aleutian Standard Time)"
     },
+    "kristina": {
+        "username": "kristina",
+        "password": "kristina",
+        "full_name": "kristina t",
+        "email": "kristina@gmail.com",
+        "registrationDate": "Wed Dec 18 2019 21:22:54 GMT-1000 (Hawaii-Aleutian Standard Time)"
+    }, 
     "preetha": {
         "username": "preetha",
         "password": "preetha",
@@ -52,4 +59,5 @@
         "email": "preetha@gmail.com",
         "registrationDate": "Wed Dec 18 2019 21:25:20 GMT-1000 (Hawaii-Aleutian Standard Time)"
     }
+    
 }
