@@ -11,22 +11,13 @@ header.innerHTML = (`
    </div>
    
    <div align="right">
-  <a href="/index.html" class="button2">Student View</a>
+  <a href="/index.html" class="button2">Home</a>
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="/analysis.html" class="button1">Analysis</a>
-       <a href="/searchAndUpdate.html" class="button1">Student Information</a>
-     
-   <a href="/newStudentReg.html" class="button1">New Student Registration</a>
- 
- <div class="dropdown">
- <button class="dropbtn">Finances</button>
- <div align = "left" class="dropdown-content">
-   <a href="#">Outstanding Payments</a>
-   <a href="#">Overview</a>
-   <a href="#">Payment Schedule by Trimester</a>
- </div>
+       <a href="#" class="button1">Student Progress Reports</a>
+       <a href="#" class="button1">Student Feedback</a>
+       <a href="#" class="button1">Lesson Schedule</a>
 </div>
 
    `);
