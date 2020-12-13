@@ -1,0 +1,56 @@
+<!-- Description: This is the login page for our site. Before users can go to the schedule page, they must login-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+ <!-- Common header used on all pages -->
+    <header id="main-header"></header>
+    <div style="background-color:#FFFFFF">
+
+    <h1>Teacher Login Page</h1>
+    <!-- Link that takes you to the register page -->
+    <a href="/login.html">Click here to select different login type</a>
+    <br>
+    <br>
+    <!-- Source: Lab 14 exercise 4 -->
+    <form name="login" action="" method="POST">
+        <input type="text" name="username" size="40" placeholder="enter username"><br />
+        <input type="password" name="password" size="40" placeholder="enter password"><br />
+        <input type="submit" value="Login" name="submit">
+    </form>
+
+    <script>
+        // Source: Port Assignment 1 example 
+        let params = (new URL(document.location)).searchParams;
+        the_user = params.get("username"); // get value of user 
+        if (the_user != null) {
+            // there is a value for the_user
+            login.username.value = the_user;
+            // store the value for the_user in the login form in the username textbox
+        }
+    </script>
+    
+
+
+    <!-- Common footer used on all pages. Also, creating a condensed break using a class with a margin-top of 50px instead of multiple <br>'s. -->
+
+    <div class="smallbreak"></div>
+    </div>
+
+    <footer id="main-footer"></footer>
+
+    <script type="text/javascript" src="login.js"></script>
+
+
+</body>
+
+</html>
