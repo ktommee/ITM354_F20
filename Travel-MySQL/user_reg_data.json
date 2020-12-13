@@ -1,23 +1,23 @@
 {
     "monday": {
-        "username": "monday",
-        "password": "monday",
+        "username": "joseph",
+        "password": "joseph",
         "full_name": "mondaystudent",
         "email": "monday@gmail.com",
         "date": "Wed Dec 11 2019 15:57:31 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "monday"
     },
     "thursday": {
-        "username": "thursday",
-        "password": "thursday",
+        "username": "clement",
+        "password": "clement",
         "full_name": "thursdaystudent",
         "email": "thursday@yahoo.com",
         "registrationDate": "Fri Dec 13 2019 11:57:43 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "thursday"
     },
     "saturday": {
-        "username": "saturday",
-        "password": "saturday",
+        "username": "john",
+        "password": "john",
         "full_name": "saturdaystudent",
         "email": "saturday@gmail.com",
         "registrationDate": "Fri Dec 13 2019 12:17:11 GMT-1000 (Hawaii-Aleutian Standard Time)",
