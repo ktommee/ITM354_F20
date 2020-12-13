@@ -12,34 +12,22 @@
 </head>
 
 <body>
- <!-- Common header used on all pages -->
     <header id="main-header"></header>
     <div style="background-color:#FFFFFF">
 
-    <h1>Teacher and Administrator Login Page</h1>
+    <h1>Login Page</h1>
     <!-- Link that takes you to the register page -->
-    <h3><b>Login is only for Teachers and Administrators, NOT students.</a></b></h3>
+    <h3><b>Select User Login Type:</a></b></h3>
     <br>
-    <br>
-    <!-- Source: Lab 14 exercise 4 -->
-    <form name="login" action="" method="POST">
-        <input type="text" name="username" size="40" placeholder="enter username"><br />
-        <input type="password" name="password" size="40" placeholder="enter password"><br />
-        <input type="submit" value="Login" name="submit">
-    </form>
-
-    <script>
-        // Source: Port Assignment 1 example 
-        let params = (new URL(document.location)).searchParams;
-        the_user = params.get("username"); // get value of user 
-        if (the_user != null) {
-            // there is a value for the_user
-            login.username.value = the_user;
-            // store the value for the_user in the login form in the username textbox
-        }
-    </script>
     
-
+    <div class="row">
+        <div >    
+            <a href="/login1.html" class="button4">Admin Login</a>
+            <a href="/login2.html" class="button4">Teacher Login</a>
+            <a href="/login3.html" class="button4">Current Student Login</a>
+</div>
+</div>
+</div>
 
     <!-- Common footer used on all pages. Also, creating a condensed break using a class with a margin-top of 50px instead of multiple <br>'s. -->
 
