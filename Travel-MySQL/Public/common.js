@@ -9,8 +9,12 @@ header.innerHTML = (`
                     <img src="http://www.nobusakurai.com/wp-content/uploads/2013/09/nobu-logo_pink_small.png" alt="Nobu Sakurai Piano Studios Logo" /></a>
                 </div>
    </div>
+
+   <div align="right">
+   <a href="/login.html" class="button3">Login</a>
 <br>
-   <div align="center">
+<br>
+    <div align="center" style="background-color:paleturquoise">
        <a href="/index.html" class="button1">Home</a>
        <div class="dropdown">
        <button class="dropbtn">About Us</button>
@@ -26,7 +30,6 @@ header.innerHTML = (`
      <div align = "left" class="dropdown-content">
      <a href="apply.html">Apply for Time Slot</a> 
      <a href="availability.html">Class Availability</a>
-       <a href="feedback.html">Submit Feedback</a>
      </div>
    </div>
    <div class="dropdown">
@@ -35,7 +38,7 @@ header.innerHTML = (`
    <a href="/teacher_lookup.html">Teacher Lookup</a>
    </div>
    </div>
-   <a href="/login.html" class="button3">Teacher/Admin Login</a>
+  
    
 
    `);
