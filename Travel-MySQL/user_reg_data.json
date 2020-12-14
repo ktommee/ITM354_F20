@@ -1,5 +1,5 @@
 {
-    "monday": {
+    "joseph": {
         "username": "joseph",
         "password": "joseph",
         "full_name": "mondaystudent",
@@ -7,7 +7,7 @@
         "date": "Wed Dec 11 2019 15:57:31 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "monday"
     },
-    "thursday": {
+    "clement": {
         "username": "clement",
         "password": "clement",
         "full_name": "thursdaystudent",
@@ -15,7 +15,7 @@
         "registrationDate": "Fri Dec 13 2019 11:57:43 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "thursday"
     },
-    "saturday": {
+    "john": {
         "username": "john",
         "password": "john",
         "full_name": "saturdaystudent",
@@ -23,9 +23,9 @@
         "registrationDate": "Fri Dec 13 2019 12:17:11 GMT-1000 (Hawaii-Aleutian Standard Time)",
         "day": "thursday"
     },
-    "itm352": {
-        "username": "itm352",
-        "password": "grader",
+    "jensen": {
+        "username": "jensen",
+        "password": "jensen",
         "full_name": "itm352",
         "email": "a@gmail.com",
         "registrationDate": "Fri Dec 13 2019 11:54:21 GMT-1000 (Hawaii-Aleutian Standard Time)",
