@@ -38,6 +38,7 @@ header.innerHTML = (`
    <div align = "left" class="dropdown-content">
    <a href="#">Update Account Information</a>
    <a href="#">View Teacher Feedback</a>
+   <a href="student.html">Student Lesson Schedule</a>
    </div>
    </div>
   
