@@ -36,8 +36,9 @@ header.innerHTML = (`
    <div class="dropdown">
    <button class="dropbtn">Account Information</button>
    <div align = "left" class="dropdown-content">
+   <a href="#">Payment</a>
    <a href="#">Update Account Information</a>
-   <a href="#">View Teacher Feedback</a>
+   <a href="#">View Progress Report</a>
    <a href="student.html">Student Lesson Schedule</a>
    </div>
    </div>
