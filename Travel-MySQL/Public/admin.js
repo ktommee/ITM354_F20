@@ -15,19 +15,38 @@ header.innerHTML = (`
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-       <a href="/analysis.html" class="button1">Analysis</a>
-       <a href="/searchAndUpdate.html" class="button1">Student Information</a>
+  
+      <div class="dropdown">
+        <button class="dropbtn">Add & Search Student</button>
+        <div align = "left" class="dropdown-content">
+          <a href="#">Register New Student</a>
+          <a href="#">Search by Active Status</a>
+          <a href="#">Search by Address</a>
+          <a href="#">Search by Teacher</a>
+        </div>
+      </div>
      
-   <a href="/newStudentReg.html" class="button1">New Student Registration</a>
+    <div class="dropdown">
+      <button class="dropbtn">Update Students</button>
+      <div align = "left" class="dropdown-content">
+         <a href="#">Full Record</a>
+         <a href="#">General Information</a>
+         <a href="#">Active Status</a>
+         <a href="#">Contact Information</a>
+         <a href="#">Lesson Information</a>
+       </div>
+    </div>
  
- <div class="dropdown">
- <button class="dropbtn">Finances</button>
- <div align = "left" class="dropdown-content">
-   <a href="#">Outstanding Payments</a>
-   <a href="#">Overview</a>
-   <a href="#">Payment Schedule by Trimester</a>
- </div>
-</div>
+    <div class="dropdown">
+      <button class="dropbtn">Finance Reports</button>
+      <div align = "left" class="dropdown-content">
+        <a href="#">Outstanding Payments</a>
+        <a href="#">Overview</a>
+        <a href="#">Payment Schedule by Trimester</a>
+      </div>
+    </div>
+
+    <a href="/analysis.html" class="button1">Operations Analysis</a>
 
    `);
 
