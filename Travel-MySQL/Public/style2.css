@@ -377,6 +377,30 @@ input[type=text], select, textarea {
     resize: vertical;
   }
 
+  input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgb(209, 230, 236);
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgb(209, 230, 236);
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
   input[type=submit]:hover {
     background-color: #45a049;
   }

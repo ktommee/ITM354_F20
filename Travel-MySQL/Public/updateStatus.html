@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Nobu Sakurai Piano Studios  | Teachers Home Page</title>
+</head>
+<body>
+    <div id="main-header"></div>
+    <br>
+    
+    <div style="background-color:#FFFFFF">
+
+   <!-- <h3> Navigate through these pages to search queries and generate reports and forms! </h3> --> 
+
+    </div>
+    <div style="background-color:#ffffff">
+        <br>
+        <form action="/updateStatus" method="POST">
+            <label for="stu_id"><b>Student ID</b></label>
+                <input type='text' name='stu_id' placeholder="Student ID" required><BR>
+            <label for="upStatus"><b>New Active Status of Student</b></label>
+                <input type='text' name='upStatus' placeholder="Status" required><BR>
+            <input type="submit" value="Submit">
+            <p><em>NOTE: 0 = Inactive, 1 = Active, 2 = ?</em></p>
+        </form>
+
+</div>
+<br>
+<footer id="main-footer"></footer>
+<script type="text/javascript" src="admin.js"></script>  
+</body>
+</html>

@@ -330,7 +330,7 @@ status = POST['student_activity'];      // Grab the parameters from the submitte
     //var res_json = JSON.parse(res_string);
 
     // Now build the response: table of results and form to do another query
-    response_form = `<form action="searchAndUpdate.html" method="GET">`;
+    response_form = `<form action="searchStatus.html" method="GET">`;
     response_form += `<link rel="stylesheet" href="style2.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Student ID</td><td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
@@ -340,7 +340,7 @@ status = POST['student_activity'];      // Grab the parameters from the submitte
       response_form += `<td> ${result[i].Student_lname}</td></tr>`;
     }
     response_form += "</table>";
-    response_form += `<input type="submit" value="Another Query?"> </form>`;
+    response_form += `<input type="submit" value="Return"> </form>`;
     response.send(response_form);
   });
 }
@@ -702,7 +702,7 @@ app.post('/updateStatus', (request, response) => {
 
     })
     //console.log(request.body)
-    response.redirect("/action_confirmed2.html");
+    response.redirect("/action_confirmed_StatusUpdate.html");
   })
 })
 
@@ -823,5 +823,75 @@ app.post("/apply_query", function (request, response) {
 let POST = request.body;
 applyquery_DB(POST, response);
 });
+
+
+//Collected Payments Report
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function collectedPay_DB(POST, response) {
+    
+  query = "SELECT Student_Fname, Student_Lname, Payment_date FROM Student, Payment WHERE Active=1 AND Student_id=Payment_student_id AND payment_date>='2020-02-01' AND payment_date<='2020-04-01'";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="admin2.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<h2>Students with Collected Tuition this Month</h2>`
+    response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+    response_form += `<td><B>Fist Name</td><td><B>Last Name</td><td><B>Payment Date</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Student_Fname}</td>`;
+      response_form += `<td> ${result[i].Student_Lname}</td>`;
+      response_form += `<td> ${result[i].Payment_date}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Return to Homepage"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/hasPaid", function (request, response) {
+let POST = request.body;
+console.log(request.body)
+collectedPay_DB(POST, response);
+});
+
+//Overdue Payments Report
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function overduePay_DB(POST, response) {
+    
+    query = "SELECT Student_Fname, Student_Lname FROM Student WHERE Active=1 AND NOT EXISTS (SELECT * FROM Payment WHERE Student_id=Payment_student_id AND payment_date>='2020-01-01' AND payment_date<='2020-02-01')";
+    con.query(query, function (err, result, fields) {   // Run the query
+      if (err) throw err;
+      console.log(result);
+      //var res_string = JSON.stringify(result);
+      //var res_json = JSON.parse(res_string);
+  
+      // Now build the response: table of results and form to do another query
+      response_form = `<form action="admin2.html" method="GET">`;
+      response_form += `<link rel="stylesheet" href="style2.css">`
+      response_form += `<h2>Students with Overdue Payments this Month</h2>`
+      response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+      response_form += `<td><B>Fist Name</td><td><B>Last Name</td></b>`;
+      for (i in result) {
+        response_form += `<tr><td> ${result[i].Student_Fname}</td>`;
+        response_form += `<td> ${result[i].Student_Lname}</td></tr>`;
+      }
+      response_form += "</table>";
+      response_form += `<input type="submit" value="Return to Homepage"> </form>`;
+      response.send(response_form);
+    });
+  }
+  
+  app.post("/overduePayment", function (request, response) {
+  let POST = request.body;
+  console.log(request.body)
+ overduePay_DB(POST, response);
+  });
 
 app.listen(8080, () => console.log(`listening on port 8080`));

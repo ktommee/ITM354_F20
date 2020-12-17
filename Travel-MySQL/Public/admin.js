@@ -15,12 +15,14 @@ header.innerHTML = (`
 </div>
 <br>
    <div align="center" style="background-color:paleturquoise">
-  
+
+      <a href="/admin2.html" class="button1">Schedule</a>
+
       <div class="dropdown">
         <button class="dropbtn">Add & Search Student</button>
         <div align = "left" class="dropdown-content">
           <a href="#">Register New Student</a>
-          <a href="#">Search by Active Status</a>
+          <a href="searchStatus.html">Search by Active Status</a>
           <a href="#">Search by Address</a>
           <a href="#">Search by Teacher</a>
         </div>
@@ -29,19 +31,25 @@ header.innerHTML = (`
     <div class="dropdown">
       <button class="dropbtn">Update Students</button>
       <div align = "left" class="dropdown-content">
-         <a href="#">Full Record</a>
-         <a href="#">General Information</a>
-         <a href="#">Active Status</a>
-         <a href="#">Contact Information</a>
-         <a href="#">Lesson Information</a>
+         <a href="updateFull.html">Full Record</a>
+         <a href="updateGeneral.html">General Information</a>
+         <a href="updateStatus.html">Active Status</a>
+         <a href="updateContact.html">Contact Information</a>
+         <a href="updateLesson.html">Lesson Information</a>
        </div>
     </div>
  
     <div class="dropdown">
       <button class="dropbtn">Finance Reports</button>
       <div align = "left" class="dropdown-content">
-        <a href="#">Outstanding Payments</a>
         <a href="#">Overview</a>
+        <form action="/hasPaid" method="POST">
+          <input type="submit" value="Collected Payment">
+        </form>
+        <form action="/overduePayment" method="POST">
+          <input type="submit" value="Overdue Payment">
+        </form>
+        
         <a href="#">Payment Schedule by Trimester</a>
       </div>
     </div>
