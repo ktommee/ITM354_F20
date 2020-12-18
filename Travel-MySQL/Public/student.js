@@ -37,7 +37,7 @@ header.innerHTML = (`
    <button class="dropbtn">Account Information</button>
    <div align = "left" class="dropdown-content">
    <a href="#">Payment</a>
-   <a href="updateStudentAccount.html">Update Account Information</a>
+   <a href="studentUpdate.html">Update Account Information</a>
    <a href="#">View Progress Report</a>
    <a href="student.html">Student Lesson Schedule</a>
    </div>
