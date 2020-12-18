@@ -258,7 +258,7 @@ function Teachquery_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Student Gender</td><td><B>Student Phone Number</td><td><B>Student Email</td></b>`;
     for (i in result) {
@@ -297,7 +297,7 @@ function StudentRegInfo_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="student_reg_info.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Student First Name</td><td><B>Student Last Name</td><td><B>Registration Date</td></b>`;
     for (i in result) {
@@ -331,7 +331,7 @@ status = POST['student_activity'];      // Grab the parameters from the submitte
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchStatus.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Student ID</td><td><B>Student First Name</td><td><B>Student Last Name</td></b>`;
     for (i in result) {
@@ -366,7 +366,7 @@ function Tuition_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="analysis.html" method="GET" >`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Total Revenue</td></b>`;
     for (i in result) {
@@ -620,7 +620,7 @@ function Timeslot_Day_DB(POST, response) {
   
       // Now build the response: table of results and form to do another query
       response_form = `<form action="availability.html" method="GET">`;
-      response_form += `<link rel="stylesheet" href="style2.css">`
+      response_form += `<link rel="stylesheet" href="table_generation.css">`
       response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
       response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
       for (i in result) {
@@ -724,7 +724,7 @@ function Studentquery_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="searchAndUpdate.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>Registration Date</td><td><B>Start Date</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td><td><B>Active Status</td><td><B>Gender</td><td><B>Lesson ID</td></b>`;
     for (i in result) {
@@ -765,7 +765,7 @@ function availableclassAll_Query(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="availability.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Lesson Day</td><td><B>Lesson Time</td><td><B>Teacher Name</td><td><B>Teacher Email</td></b>`;
     for (i in result) {
@@ -785,7 +785,8 @@ app.post("/allavailable", function (request, response) {
   availableclassAll_Query(POST, response);
   });
 
-//
+/*NO LONGER BEING USED
+//Pull Applications
 //------------------------------------------------
 function applyquery_DB(POST, response) {
   stufname = POST['stu-fname']; // Grab the parameters from the submitted form
@@ -800,7 +801,7 @@ function applyquery_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="newStudentReg.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Student ID</td><td><B>First Name</td><td><B>Last Name</td><td><B>City</td><td><B>School</td><td><B>Grade</td><td><B>Email</td><td><B>Phone#</td></b>`;
     for (i in result) {
@@ -823,6 +824,7 @@ app.post("/apply_query", function (request, response) {
 let POST = request.body;
 applyquery_DB(POST, response);
 });
+*/
 
 
 //Collected Payments Report
@@ -839,7 +841,7 @@ function collectedPay_DB(POST, response) {
 
     // Now build the response: table of results and form to do another query
     response_form = `<form action="admin2.html" method="GET">`;
-    response_form += `<link rel="stylesheet" href="style2.css">`
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
     response_form += `<h2>Students with Collected Tuition this Month</h2>`
     response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
     response_form += `<td><B>Fist Name</td><td><B>Last Name</td><td><B>Payment Date</td></b>`;
@@ -874,7 +876,7 @@ function overduePay_DB(POST, response) {
   
       // Now build the response: table of results and form to do another query
       response_form = `<form action="admin2.html" method="GET">`;
-      response_form += `<link rel="stylesheet" href="style2.css">`
+      response_form += `<link rel="stylesheet" href="table_generation.css">`
       response_form += `<h2>Students with Overdue Payments this Month</h2>`
       response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
       response_form += `<td><B>Fist Name</td><td><B>Last Name</td></b>`;
