@@ -641,6 +641,40 @@ function Timeslot_Day_DB(POST, response) {
   Timeslot_Day_DB(POST, response);
   });
 
+//Timeslot_Availability_Day
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function Student_Report_DB(POST, response) {
+  studentfname = POST['student_fname'];      // Grab the parameters from the submitted form
+  studentlname = POST['student_lname'];
+  
+    query = query = "SELECT Report_date, Report FROM Progress_report WHERE Progress_student_id IN(SELECT Student_id FROM Student WHERE Student_fname = '" + studentfname + "' AND Student_lname = '" + studentlname + "')";
+    con.query(query, function (err, result, fields) {   // Run the query
+      if (err) throw err;
+      console.log(result);
+      //var res_string = JSON.stringify(result);
+      //var res_json = JSON.parse(res_string);
+  
+      // Now build the response: table of results and form to do another query
+      response_form = `<form action="student" method="GET">`;
+      response_form += `<link rel="stylesheet" href="style2.css">`
+      response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+      response_form += `<td><B>Report Date</td><td><B>Report</td></b>`;
+      for (i in result) {
+        response_form += `<tr><td> ${result[i].Report_date}</td>`;
+        response_form += `<td> ${result[i].Report}</td></tr>`;
+      }
+      response_form += "</table>";
+      response_form += `<input type="submit" value="Another Query?"> </form>`;
+      response.send(response_form);
+    });
+  }
+  
+  app.post("/student_report", function (request, response) {
+  let POST = request.body;
+  console.log(request.body)
+  Student_Report_DB(POST, response);
+  });
 
 //END OF CLEMENT'S CODE
 
