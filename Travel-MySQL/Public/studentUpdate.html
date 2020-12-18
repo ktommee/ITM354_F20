@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Nobu Sakurai Piano Studios  | Teachers Home Page</title>
+</head>
+<body>
+    <div id="main-header"></div>
+    <br>
+    
+    <div style="background-color:#FFFFFF">
+
+   <!-- <h3> Navigate through these pages to search queries and generate reports and forms! </h3> --> 
+
+    </div>
+    <div style="background-color:#ffffff">
+    <!-- Form Here-->
+    <form action="/updateFull" method="POST">
+        <fieldset>
+        <h3>Select Student by ID:</h3>
+        <label for="stu_id"><b>Student ID</b></label>
+            <input type='text' name='stu_id' placeholder="Student ID" required>
+        <h3>Update Records:</h3>
+        <label for="fname">First Name:</label><br>
+            <input type='text' name='fname' id='fname' pattern='[A-Za-z]{1,32}' placeholder='John' title='Any capital or lowercase letters. Maximum of 32 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+        <label for="lname">Last Name:</label><br>
+            <input type='text' name='lname' id='lname' pattern='[A-Za-z]{1,32}' placeholder='Doe' title='Any capital or lowercase letters. Maximum of 32 characters.' required><br> <!--Regex Validation: Must any capitalized/lowercase characters. Minimum length = 1, Max = 32 characters-->
+        <label for="pnumber">Phone Number:</label><br>
+            <input type='tel' name='pnumber' id='pnumber' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' placeholder='123-45-678' title='Test Title' required><br> <!--Regex Validation: Must contain integers of 0-9 with maximum integer amounts of 3, 2, and 3 seperated by dashes.-->
+        <label for="s_email">Student Email:</label><br>
+            <input type='email' name='s_email' id='s_email' pattern='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' title='Describe form requirement here' required><br> <!--Regex Validation: Any character or integer@Any character or integer.Minimum 2 of any character-->
+        <label for="gender">Gender</label><br>
+            <input type='text' name='gender' id='gender' pattern='[MF]{1,1}' title='Type either M or F' required><br> <!--Regex Validation: Contain values of capital M or capital F. Min/Max = 1 character.-->
+        <label for="s_address">Address:</label><br>
+            <input type='text' name='s_address' id='s_address' pattern='' title='Describe form requirement here' required><br> <!--Regex Validation:-->
+        <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+</div>
+<br>
+<footer id="main-footer"></footer>
+<script type="text/javascript" src="student.js"></script>  
+</body>
+</html>
