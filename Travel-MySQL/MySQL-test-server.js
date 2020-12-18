@@ -656,7 +656,7 @@ function Student_Report_DB(POST, response) {
       //var res_json = JSON.parse(res_string);
   
       // Now build the response: table of results and form to do another query
-      response_form = `<form action="student" method="GET">`;
+      response_form = `<form action="student_report.html" method="GET">`;
       response_form += `<link rel="stylesheet" href="style2.css">`
       response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
       response_form += `<td><B>Report Date</td><td><B>Report</td></b>`;
