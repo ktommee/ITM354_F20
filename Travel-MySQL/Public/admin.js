@@ -20,7 +20,7 @@ header.innerHTML = (`
 
       <div class="dropdown">
         <button class="dropbtn">Add & Search Student</button>
-        <div align = "left" class="dropdown-content">
+        <div align = "center" class="dropdown-content">
           <a href="#">Register New Student</a>
           <a href="searchStatus.html">Search by Active Status</a>
           <a href="#">Search by Address</a>
@@ -30,7 +30,7 @@ header.innerHTML = (`
      
     <div class="dropdown">
       <button class="dropbtn">Update Students</button>
-      <div align = "left" class="dropdown-content">
+      <div align = "center" class="dropdown-content">
          <a href="updateFull.html">Full Record</a>
          <a href="updateGeneral.html">General Information</a>
          <a href="updateStatus.html">Active Status</a>
@@ -41,13 +41,13 @@ header.innerHTML = (`
  
     <div class="dropdown">
       <button class="dropbtn">Finance Reports</button>
-      <div align = "left" class="dropdown-content">
+      <div align = "center" class="dropdown-content">
         <a href="#">Overview</a>
         <form action="/hasPaid" method="POST">
-          <input type="submit" value="Collected Payment">
+          <input type="submit" value="Collected Payment" id="admin_nav" >
         </form>
         <form action="/overduePayment" method="POST">
-          <input type="submit" value="Overdue Payment">
+          <input type="submit" value="Overdue Payment" id="admin_nav">
         </form>
         
         <a href="#">Payment Schedule by Trimester</a>
