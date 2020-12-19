@@ -38,7 +38,9 @@ header.innerHTML = (`
    <div align = "left" class="dropdown-content">
    <a href="#">Payment</a>
    <a href="studentUpdate.html">Update Account Information</a>
-   <a href="student_report.html">View Progress Report</a>
+        <form action="/student_report" method="POST">
+          <input type="submit" value="View Progress Report" id="admin_nav" >
+        </form>
    <a href="student.html">Student Lesson Schedule</a>
    </div>
    </div>
