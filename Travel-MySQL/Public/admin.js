@@ -42,15 +42,16 @@ header.innerHTML = (`
     <div class="dropdown">
       <button class="dropbtn">Finance Reports</button>
       <div align = "center" class="dropdown-content">
-        <a href="#">Overview</a>
+          
+        <form action="/generalFinance" method="POST">
+          <input type="submit" value="Financial Overview" id="admin_nav" >
+        </form>
         <form action="/hasPaid" method="POST">
           <input type="submit" value="Collected Payment" id="admin_nav" >
         </form>
         <form action="/overduePayment" method="POST">
           <input type="submit" value="Overdue Payment" id="admin_nav">
         </form>
-        
-        <a href="#">Payment Schedule by Trimester</a>
       </div>
     </div>
 

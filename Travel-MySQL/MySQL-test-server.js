@@ -931,4 +931,42 @@ function overduePay_DB(POST, response) {
  overduePay_DB(POST, response);
   });
 
+
+//General Student Financial and Monthly Payment Information
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function monthFinance(POST, response) {
+  //payment_month = POST['payment_month']; // Grab the parameters from the submitted form
+  
+  query = "SELECT Student_id, CONCAT(Student_fname, ' ', Student_lname) AS Student_name, Tuition, Deposit_amount FROM Student WHERE Active=1";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="admin2.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
+    response_form += `<h2>Student Financial Information Overview</h2>`
+    response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+    response_form += `<td><B>ID</td><td><B>Name</td><td><B>Tuition</td><td><B>Deposit Amount</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Student_id}</td>`;
+      response_form += `<td> ${result[i].Student_name}</td>`;
+      response_form += `<td>$${result[i].Tuition}</td>`;
+      response_form += `<td>$${result[i].Deposit_amount}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Return"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/generalFinance", function (request, response) {
+let POST = request.body;
+console.log(request.body)
+monthFinance(POST, response);
+});
+
 app.listen(8080, () => console.log(`listening on port 8080`));
