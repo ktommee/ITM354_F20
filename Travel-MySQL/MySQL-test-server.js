@@ -969,4 +969,40 @@ console.log(request.body)
 monthFinance(POST, response);
 });
 
+//Earnings Breakdown by Teacher
+//-----------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
+function byTeacher(POST, response) {
+  //payment_month = POST['payment_month']; // Grab the parameters from the submitted form
+  
+  query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS 'Teacher', SUM(Tuition) AS 'Income_Per_Month' FROM teachers, student, lesson_slot WHERE Active='1' AND Teacher_id = lesson_teacher_id AND lesson_id = student_lesson_id GROUP BY Teacher";
+  con.query(query, function (err, result, fields) {   // Run the query
+    if (err) throw err;
+    console.log(result);
+    //var res_string = JSON.stringify(result);
+    //var res_json = JSON.parse(res_string);
+
+    // Now build the response: table of results and form to do another query
+    response_form = `<form action="admin2.html" method="GET">`;
+    response_form += `<link rel="stylesheet" href="table_generation.css">`
+    response_form += `<h2>Tuition Earnings of Active Students | Breakdown by Teachers</h2>`
+    response_form += `<table border="3" cellpadding="5" cellspacing="5" id="report_table">`;
+    response_form += `<td><B>Name</td><td><B>Income Per Month</td></b>`;
+    for (i in result) {
+      response_form += `<tr><td> ${result[i].Teacher}</td>`;
+      response_form += `<td>$${result[i].Income_Per_Month}</td></tr>`;
+    }
+    response_form += "</table>";
+    response_form += `<input type="submit" value="Return"> </form>`;
+    response.send(response_form);
+  });
+}
+
+app.post("/byTeacher", function (request, response) {
+let POST = request.body;
+console.log(request.body)
+byTeacher(POST, response);
+});
+
+
 app.listen(8080, () => console.log(`listening on port 8080`));

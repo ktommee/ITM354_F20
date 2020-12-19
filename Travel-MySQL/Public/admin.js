@@ -46,6 +46,9 @@ header.innerHTML = (`
         <form action="/generalFinance" method="POST">
           <input type="submit" value="Financial Overview" id="admin_nav" >
         </form>
+        <form action="/byTeacher" method="POST">
+          <input type="submit" value="Earnings Breakdown" id="admin_nav">
+        </form>
         <form action="/hasPaid" method="POST">
           <input type="submit" value="Collected Payment" id="admin_nav" >
         </form>
