@@ -641,7 +641,7 @@ function Timeslot_Day_DB(POST, response) {
   Timeslot_Day_DB(POST, response);
   });
 
-//Timeslot_Availability_Day
+//Report
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
 function Student_Report_DB(POST, response) {
@@ -975,7 +975,11 @@ monthFinance(POST, response);
 function byTeacher(POST, response) {
   //payment_month = POST['payment_month']; // Grab the parameters from the submitted form
   
-  query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS 'Teacher', SUM(Tuition) AS 'Income_Per_Month' FROM teachers, student, lesson_slot WHERE Active='1' AND Teacher_id = lesson_teacher_id AND lesson_id = student_lesson_id GROUP BY Teacher";
+  //Joined Version
+  query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS 'Teacher', SUM(Tuition) AS 'Income_Per_Month' FROM lesson_slot JOIN teachers ON Lesson_teacher_id = Teacher_id JOIN student ON Lesson_id = Student_lesson_id WHERE Active='1' GROUP BY Teacher";
+  
+  //Old version
+  //query = "SELECT CONCAT(Teacher_fname, ' ', Teacher_lname) AS 'Teacher', SUM(Tuition) AS 'Income_Per_Month' FROM teachers, student, lesson_slot WHERE Active='1' AND Teacher_id = lesson_teacher_id AND lesson_id = student_lesson_id GROUP BY Teacher";
   con.query(query, function (err, result, fields) {   // Run the query
     if (err) throw err;
     console.log(result);
